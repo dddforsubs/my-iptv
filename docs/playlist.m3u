@@ -1,0 +1,114 @@
+#EXTM3U
+
+########## ПОЗНАВАТЕЛЬНЫЕ — RU ##########
+
+#EXTINF:-1 tvg-id="Nauka.ru@SD" group-title="Познавательные RU",Наука
+http://stream.mcquack.net/125/index.m3u8
+
+#EXTINF:-1 tvg-id="MoyaPlaneta.ru@SD" group-title="Познавательные RU",Моя Планета
+http://91.226.120.120/chid210/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-id="Istoriya.ru@SD" group-title="Познавательные RU",История
+http://hls127.freeott.top:8080/Istoriya/video.m3u8
+
+#EXTINF:-1 tvg-id="Zhivayapriroda.ru@HD" group-title="Познавательные RU",Живая природа HD
+http://stream.mcquack.net/225/index.m3u8
+
+#EXTINF:-1 tvg-id="Vmirezhivotnykh.ru@SD" group-title="Познавательные RU",В мире животных
+http://stream.mcquack.net/241/index.m3u8
+
+#EXTINF:-1 tvg-id="vijuNature.ru@SD" group-title="Познавательные RU",viju Nature
+https://stream8.cinerama.uz/1228/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 tvg-id="vijuExplore.ru@SD" group-title="Познавательные RU",viju Explore
+http://stream.mcquack.net/239/index.m3u8
+
+#EXTINF:-1 tvg-id="365daysTV.ru@SD" group-title="Познавательные RU",365 дней TV
+http://stream.mcquack.net/70/index.m3u8
+
+#EXTINF:-1 tvg-id="RTGTV.ru@HD" group-title="Познавательные RU",RTG TV HD
+http://stream.mcquack.net/164/index.m3u8
+
+#EXTINF:-1 tvg-id="TravelPlusAdventure.ru@SD" group-title="Познавательные RU",Travel+Adventure
+http://45.145.32.13:20440/travel_adventure/index.m3u8?token=test
+
+#EXTINF:-1 tvg-id="TochkaRF.ru@SD" group-title="Познавательные RU",Точка РФ
+http://stream.mcquack.net/161/index.m3u8
+
+#EXTINF:-1 tvg-id="Prosveshchenie.ru@SD" group-title="Познавательные RU",Просвещение
+http://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8
+
+#EXTINF:-1 tvg-id="BigAsia.ru@SD" group-title="Познавательные RU",Большая Азия
+http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Zoopark.ru@SD" group-title="Познавательные RU",Зоопарк
+https://stream8.cinerama.uz/1417/tracks-v1a1/mono.m3u8
+
+
+########## DOCUMENTARY / HISTORY — EN ##########
+
+#EXTINF:-1 tvg-id="DocumentaryPlus.us@US" group-title="Documentary EN",Documentary+
+https://ef79b15c8c7c46c7a9de9d33001dbd07.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-859-DOCUMENTARYPLUS-DOCUMENTARYPLUS/mt/documentaryplus/859/hls/master/playlist.m3u8
+
+#EXTINF:-1 tvg-id="DocumentaryPlus.us@International" group-title="Documentary EN",Documentary+ International
+https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Docurama.us@SD" group-title="Documentary EN",Docurama
+https://docurama-plex-ingest.cinedigm.com/playlist.m3u8
+
+#EXTINF:-1 tvg-id="HistoryHit.uk@SD" group-title="History EN",History Hit
+https://lds-timeline-plex.amagi.tv/playlist.m3u8
+
+#EXTINF:-1 tvg-id="Wonder.uk@SD" group-title="Documentary EN",Wonder
+https://lds-wonder-plex.amagi.tv/playlist.m3u8
+
+#EXTINF:-1 tvg-id="CGTNDocumentary.cn@SD" group-title="Documentary EN",CGTN Documentary
+https://global.cgtn.cicc.media.caton.cloud/master/cgtn-documentary.m3u8
+
+#EXTINF:-1 tvg-id="ChinaTravel.cn@SD" group-title="Travel EN",China Travel
+https://amg01314-amg01314c7-distrotv-us-10219.playouts.now.amagi.tv/playlist/amg01314-cgtn-cgtnchinatravel-distrotvus/playlist.m3u8
+
+#EXTINF:-1 tvg-id="DiscoveringChina.cn@SD" group-title="Travel EN",Discovering China
+https://amg01314-amg01314c8-distrotv-us-10218.playouts.now.amagi.tv/playlist/amg01314-cgtn-cgtndiscoveringchina-distrotvus/playlist.m3u8
+
+#EXTINF:-1 tvg-id="NHKWorldJapan.jp@SD" group-title="Culture EN",NHK World-Japan
+https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8
+
+
+########## WORLD NEWS — EN ##########
+
+#EXTINF:-1 tvg-id="BBCNews.uk@Europe" group-title="World News EN",BBC News
+https://stream8.cinerama.uz/1251/tracks-v1a1/mono.m3u8
+
+#EXTINF:-1 group-title="World News EN",CNN International
+https://jmp2.uk/plu-66c45afaa72e7b0008a2b153.m3u8
+
+#EXTINF:-1 tvg-id="AlJazeera.qa@English" group-title="World News EN",Al Jazeera English
+https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8
+
+#EXTINF:-1 tvg-id="France24.fr@English" group-title="World News EN",France 24 English
+https://live.france24.com/hls/live/2037218/F24_EN_HI_HLS/master_5000.m3u8
+
+#EXTINF:-1 tvg-id="DW.de@English" group-title="World News EN",DW English
+https://dwamdstream102.akamaized.net/hls/live/2015525/dwstream102/master.m3u8
+
+#EXTINF:-1 tvg-id="EuronewsEnglish.fr@SD" group-title="World News EN",Euronews English
+https://cdn-euronews.akamaized.net/live/eds/euronews-en/25002/index.m3u8
+
+#EXTINF:-1 tvg-id="BloombergTV.us@US" group-title="Business News EN",Bloomberg TV
+https://bloomberg.com/media-manifest/streams/us.m3u8
+
+#EXTINF:-1 tvg-id="CBSNews247.us@SD" group-title="US News EN",CBS News 24/7
+https://jmp2.uk/plu-6231eb3865be650007f59595.m3u8
+
+#EXTINF:-1 tvg-id="NBCNewsNOW.us@SD" group-title="US News EN",NBC News NOW
+https://d1bl6tskrpq9ze.cloudfront.net/hls/master.m3u8?ads.xumo_channelId=99984003
+
+#EXTINF:-1 tvg-id="ABCNews.au@Sydney" group-title="World News EN",ABC News Australia
+https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8
+
+#EXTINF:-1 tvg-id="CGTN.cn@SD" group-title="World News EN",CGTN
+https://global.cgtn.cicc.media.caton.cloud/master/cgtn.m3u8
+
+#EXTINF:-1 tvg-id="NHKWorldJapan.jp@SD" group-title="World News EN",NHK World-Japan
+https://media-tyo.hls.nhkworld.jp/hls/w/live/master.m3u8
