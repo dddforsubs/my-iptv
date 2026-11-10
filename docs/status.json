@@ -10,7 +10,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "media playlist",
+        "stage": "playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -39,7 +39,7 @@
       "access_check": {
         "state": "restricted_or_unavailable",
         "stage": "playlist",
-        "reason": "[Errno 61] Connection refused"
+        "reason": "[Errno 111] Connection refused"
       }
     },
     {
@@ -50,10 +50,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "playlist",
+        "reason": "response is not an HLS playlist",
+        "http_status": 200
       }
     },
     {
@@ -149,7 +149,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "media playlist",
+        "stage": "playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -190,10 +190,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "playlist",
+        "reason": "response is not an HLS playlist",
+        "http_status": 200
       }
     },
     {
@@ -219,7 +219,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "media playlist",
+        "stage": "playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -232,10 +232,10 @@
       "quality": "720p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "Forbidden",
-        "http_status": 403
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -370,10 +370,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "playlist",
+        "reason": "response is not an HLS playlist",
+        "http_status": 200
       }
     },
     {
@@ -525,7 +525,7 @@
       "access_check": {
         "state": "restricted_or_unavailable",
         "stage": "playlist",
-        "reason": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)"
+        "reason": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1147)"
       }
     },
     {
@@ -883,10 +883,10 @@
       "quality": "576i",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "media segment",
+        "reason": "server returned an error page instead of a segment",
+        "http_status": 200
       }
     },
     {
@@ -957,18 +957,18 @@
   "target_count": 73,
   "found_count": 65,
   "playlist_entry_count": 56,
-  "updated_at": "2026-11-10T19:14:01.196791+00:00",
+  "updated_at": "2026-11-10T19:15:19.998537+00:00",
   "state": "ok",
   "access_check": {
-    "environment": "local runner network",
-    "checked_at": "2026-11-10T19:14:01.198451+00:00",
-    "failed_count": 22
+    "environment": "GitHub Actions runner",
+    "checked_at": "2026-11-10T19:15:19.999134+00:00",
+    "failed_count": 25
   },
   "access_failures": [
     {
       "name": "Discovery Channel HD",
       "tvg_id": "DiscoveryChannel.ru@SD",
-      "stage": "media playlist",
+      "stage": "playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
     },
@@ -983,8 +983,15 @@
       "name": "Nat Geo Wild",
       "tvg_id": "NationalGeographicWild.ru@HD",
       "stage": "playlist",
-      "reason": "[Errno 61] Connection refused",
+      "reason": "[Errno 111] Connection refused",
       "http_status": null
+    },
+    {
+      "name": "В мире животных HD",
+      "tvg_id": "Vmirezhivotnykh.ru@SD",
+      "stage": "playlist",
+      "reason": "response is not an HLS playlist",
+      "http_status": 200
     },
     {
       "name": "365 дней ТВ",
@@ -996,7 +1003,7 @@
     {
       "name": "Discovery Channel",
       "tvg_id": "DiscoveryChannel.ru@SD",
-      "stage": "media playlist",
+      "stage": "playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
     },
@@ -1015,18 +1022,18 @@
       "http_status": 403
     },
     {
-      "name": "Investigation Discovery",
-      "tvg_id": "InvestigationDiscovery.ru@SD",
-      "stage": "media playlist",
+      "name": "Animal Planet",
+      "tvg_id": "AnimalPlanet.ru@SD",
+      "stage": "playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
     },
     {
-      "name": "History US East",
-      "tvg_id": "History.us@East",
+      "name": "Investigation Discovery",
+      "tvg_id": "InvestigationDiscovery.ru@SD",
       "stage": "playlist",
-      "reason": "Forbidden",
-      "http_status": 403
+      "reason": "response is not an HLS playlist",
+      "http_status": 200
     },
     {
       "name": "Наука",
@@ -1048,6 +1055,13 @@
       "stage": "playlist",
       "reason": "Forbidden",
       "http_status": 403
+    },
+    {
+      "name": "В мире животных",
+      "tvg_id": "Vmirezhivotnykh.ru@SD",
+      "stage": "playlist",
+      "reason": "response is not an HLS playlist",
+      "http_status": 200
     },
     {
       "name": "365 дней TV",
@@ -1081,7 +1095,7 @@
       "name": "Docurama",
       "tvg_id": "Docurama.us@SD",
       "stage": "playlist",
-      "reason": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1082)",
+      "reason": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1147)",
       "http_status": null
     },
     {
@@ -1118,6 +1132,13 @@
       "stage": "playlist",
       "reason": "Forbidden",
       "http_status": 403
+    },
+    {
+      "name": "ABC Kids",
+      "tvg_id": "ABCKids.au@Sydney",
+      "stage": "media segment",
+      "reason": "server returned an error page instead of a segment",
+      "http_status": 200
     }
   ]
 }
