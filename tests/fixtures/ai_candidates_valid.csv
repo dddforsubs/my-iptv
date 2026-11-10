@@ -1,0 +1,4 @@
+Канал,Полный URL,Репозиторий,Ссылка на исходный файл,Дата исходного файла,Приоритет,Язык,Совпадение,Техпроверка,RU-аудио проверено,Комментарий,Дата поиска,Статус
+Discovery Channel,https://media.example/live.m3u8,public/example,https://github.com/public/example/blob/main/list.m3u,2026-10-31,P1,RU — предполагается,Точный бренд,НЕ ПРОВЕРЕНО,НЕ ПРОВЕРЕНО,"fixture, quoted note",2026-11-10,NEW
+Discovery Channel,https://media.example/live.m3u8,public/example,https://github.com/public/example/blob/main/list.m3u,2026-10-31,P1,RU — предполагается,Точный бренд,НЕ ПРОВЕРЕНО,НЕ ПРОВЕРЕНО,duplicate,2026-11-10,NEW
+Discovery Channel,https://old.example/live.m3u8,public/old,https://github.com/public/old/blob/main/list.m3u,2025-12-16,P2,RU — предполагается,Точный бренд,НЕ ПРОВЕРЕНО,НЕ ПРОВЕРЕНО,stale,2025-12-16,NEW

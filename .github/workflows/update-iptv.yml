@@ -34,14 +34,16 @@ jobs:
       - name: Run tests
         run: python -m unittest discover -s tests -v
 
-      - name: Refresh playlist from iptv-org
+      - name: Refresh playlist from iptv-org and AI candidates
+        env:
+          AI_CANDIDATES_CSV_URL: https://docs.google.com/spreadsheets/d/e/2PACX-1vS8Dh4EbkkHr69fdhrBTHO3T5-db90GFag1VGfHVgOcuhDSVyLj-2txOcjfSj40_zyHaEUZSTsYqVxB/pub?gid=1796945403&single=true&output=csv
         run: python scripts/update_playlist.py
 
       - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/playlist.m3u docs/status.json errors.md
+          git add docs/playlist.m3u docs/status.json docs/candidate_validation.json errors.md
           if ! git diff --cached --quiet; then
             git commit -m "Update IPTV playlist"
             git push

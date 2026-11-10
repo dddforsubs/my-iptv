@@ -14,11 +14,14 @@ import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
 from pathlib import Path
+from ai_candidates import (CSV_URL, CandidateError, fetch_candidates, _public_host,
+                           redact_url, url_has_credentials)
 
 ROOT = Path(__file__).resolve().parents[1]
 README = ROOT / "README.md"
 PLAYLIST = ROOT / "docs/playlist.m3u"
 STATUS = ROOT / "docs/status.json"
+VALIDATION = ROOT / "docs/candidate_validation.json"
 ERRORS = ROOT / "errors.md"
 BASE = "https://iptv-org.github.io/api"
 PROBE_TIMEOUT = 8
@@ -191,8 +194,21 @@ class ProbeError(Exception):
         self.http_status = http_status
 
 
+class _ProbeRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        try:
+            _public_host(newurl)
+        except CandidateError as exc:
+            raise urllib.error.URLError(f"unsafe redirect: {exc}") from exc
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def fetch_probe_bytes(url: str, stage: str, limit: int) -> tuple[bytes, str, int]:
     """Fetch a small prefix without cookies, auth, referrer, or stream-specific headers."""
+    try:
+        _public_host(url)
+    except CandidateError as exc:
+        raise ProbeError(stage, str(exc)) from exc
     request = urllib.request.Request(
         url,
         headers={
@@ -201,7 +217,8 @@ def fetch_probe_bytes(url: str, stage: str, limit: int) -> tuple[bytes, str, int
         },
     )
     try:
-        with urllib.request.urlopen(request, timeout=PROBE_TIMEOUT) as response:
+        opener = urllib.request.build_opener(_ProbeRedirect())
+        with opener.open(request, timeout=PROBE_TIMEOUT) as response:
             code = int(response.getcode() or 0)
             final_url = response.geturl()
             payload = response.read(limit)
@@ -276,6 +293,15 @@ def _session_keys(text: str, base_url: str) -> list[str]:
     return keys[:1]
 
 
+def _uses_unsupported_encryption(text: str) -> bool:
+    for line in text.splitlines():
+        if line.startswith(("#EXT-X-KEY:", "#EXT-X-SESSION-KEY:")):
+            match = re.search(r"(?:^|,)METHOD=([^,]+)", line.partition(":")[2], re.I)
+            if match and match.group(1).strip('"').upper() not in {"AES-128", "NONE"}:
+                return True
+    return False
+
+
 def check_stream_access(url: str) -> dict:
     """Probe an HLS URL through its media playlist and two representative segments."""
     if url.lower().split("?", 1)[0].endswith(".mpd"):
@@ -291,11 +317,15 @@ def check_stream_access(url: str) -> dict:
             if content.startswith((b"<!doctype html", b"<html", b"{", b"<form")):
                 raise ProbeError("playlist", "server returned an HTML/JSON page instead of video", code)
         text = _playlist_text(body, "playlist", code)
+        if _uses_unsupported_encryption(text):
+            raise ProbeError("encryption", "unsupported encrypted/DRM HLS method", code)
         keys = _session_keys(text, final_url)
         variant_url = _master_variant(text, final_url)
         if variant_url:
             body, final_url, code = fetch_probe_bytes(variant_url, "media playlist", MAX_PLAYLIST_BYTES)
             text = _playlist_text(body, "media playlist", code)
+            if _uses_unsupported_encryption(text):
+                raise ProbeError("encryption", "unsupported encrypted/DRM HLS method", code)
         segments, media_keys = _media_resources(text, final_url)
         keys.extend(key for key in media_keys if key not in keys)
         if not segments:
@@ -347,15 +377,19 @@ def append_errors(failures: list[dict], checked_at: str, environment: str) -> No
         )
     if not failures:
         return
-    with ERRORS.open("a", encoding="utf-8") as report:
-        report.write(f"\n## Проверка {checked_at} — {environment}\n\n")
-        for failure in failures:
-            status = f", HTTP {failure['http_status']}" if failure.get("http_status") else ""
-            ident = f" (`{failure['tvg_id']}`)" if failure.get("tvg_id") else ""
-            report.write(
-                f"- **{failure['name']}**{ident} — этап `{failure['stage']}`{status}: "
-                f"{failure['reason']}.\n"
-            )
+    existing = ERRORS.read_text(encoding="utf-8")
+    additions = []
+    for failure in failures:
+        status = f", HTTP {failure['http_status']}" if failure.get("http_status") else ""
+        ident = f" (`{failure['tvg_id']}`)" if failure.get("tvg_id") else ""
+        line = (f"- **{failure['name']}**{ident} — этап `{failure['stage']}`{status}: "
+                f"{failure['reason']}.")
+        if line not in existing and line not in additions:
+            additions.append(line)
+    if additions:
+        with ERRORS.open("a", encoding="utf-8") as report:
+            report.write(f"\n## Новые отказы {checked_at} — {environment}\n\n")
+            report.write("\n".join(additions) + "\n")
 
 
 def build(targets: list[Target], channels: list[dict], streams: list[dict],
@@ -405,9 +439,182 @@ def build(targets: list[Target], channels: list[dict], streams: list[dict],
                                                 "playlist_entry_count": len(emitted_urls)}
 
 
+def _channel_key(value: str) -> str:
+    value = re.sub(r"\s+(?:HD|SD|4K)$", "", value.strip(), flags=re.I)
+    return re.sub(r"[^\w]+", "", value.casefold(), flags=re.UNICODE)
+
+
+def _ai_language_allowed(target: Target, candidate: dict) -> bool:
+    language = candidate.get("language", "").casefold()
+    has_english = bool(re.search(r"\b(?:en|eng|english)\b", language))
+    if "ru" in target.preference.casefold() or target.group.endswith(" RU"):
+        return not has_english
+    if "en" in target.preference.casefold() or target.group.endswith(" EN"):
+        return has_english
+    return True
+
+
+def build_with_validation(targets: list[Target], channels: list[dict], streams: list[dict],
+                          feeds: list[dict], ai_candidates: list[dict], previous: dict,
+                          probe=check_stream_access) -> tuple[str, dict, list[dict]]:
+    """Try the prior URL first, then exact iptv-org and exact-name sheet candidates."""
+    by_id = {str(c.get("id", "")): c for c in channels}
+    feed_map = {(str(f.get("channel", "")), str(f.get("id", ""))): f for f in feeds}
+    stream_map: dict[str, list[dict]] = {}
+    for stream in streams:
+        if (isinstance(stream.get("url"), str) and stream["url"].startswith(("http://", "https://"))
+                and not url_has_credentials(stream["url"])):
+            stream_map.setdefault(str(stream.get("channel", "")), []).append(stream)
+    previous_records = {item.get("name"): item for item in previous.get("found", [])
+                        if isinstance(item, dict) and item.get("name") and item.get("url")}
+    previous_map = {item.get("name"): item for item in previous.get("found", [])
+                    if isinstance(item, dict) and item.get("name") and item.get("url")
+                    and not url_has_credentials(item["url"])}
+    lines, found, missing, validations, emitted = ["#EXTM3U"], [], [], [], set()
+    checks: dict[str, dict] = {}
+
+    # Probe a bounded, prioritized candidate set concurrently. This keeps the
+    # scheduled run practical while still allowing fallback selection after failures.
+    preflight: set[str] = {item["url"] for item in previous_map.values()}
+    for target in targets:
+        ranked: list[tuple[int, str]] = []
+        for cid, channel in by_id.items():
+            for stream in stream_map.get(cid, []):
+                feed_id = str(stream.get("feed") or "")
+                feed = feed_map.get((cid, feed_id), {"channel": cid, "id": feed_id,
+                    "languages": channel.get("languages", []), "format": ""})
+                score = candidate_score(target, channel, feed, stream)
+                if score >= 0:
+                    ranked.append((score + 1000, stream["url"]))
+        for candidate in ai_candidates:
+            if (_channel_key(candidate.get("name", "")) == _channel_key(target.name)
+                    and _ai_language_allowed(target, candidate)):
+                ranked.append((500, candidate["url"]))
+        ranked.sort(reverse=True)
+        preflight.update(url for _, url in ranked[:6])
+    with concurrent.futures.ThreadPoolExecutor(max_workers=PROBE_WORKERS) as pool:
+        checks.update(zip(preflight, pool.map(probe, preflight)))
+
+    for target in targets:
+        options = []
+        prior = previous_records.get(target.name)
+        old = previous_map.get(target.name)
+        if old:
+            old_id = str(old.get("tvg_id") or "")
+            old_channel_id, _, old_feed_id = old_id.partition("@")
+            old_channel = by_id.get(old_channel_id)
+            old_feed = feed_map.get((old_channel_id, old_feed_id), {})
+            old_stream = {"channel": old_channel_id, "feed": old_feed_id, "url": old["url"],
+                          "quality": old.get("quality")}
+            old_is_eligible = (candidate_score(target, old_channel, old_feed, old_stream) >= 0
+                               if old_channel else not target.candidate_ids)
+            if old_is_eligible:
+                previous_score = candidate_score(target, old_channel, old_feed, old_stream) if old_channel else 0
+                options.append({"url": old["url"], "source": "previous", "score": previous_score,
+                                "tvg_id": old.get("tvg_id", target.tvg_id), "quality": old.get("quality"),
+                                "repository": old.get("repository"),
+                                "language_state": old.get("language_state", "language_unverified")})
+            else:
+                old = None
+        for cid, channel in by_id.items():
+            for stream in stream_map.get(cid, []):
+                feed_id = str(stream.get("feed") or "")
+                feed = feed_map.get((cid, feed_id), {"channel": cid, "id": feed_id,
+                    "languages": channel.get("languages", []), "format": ""})
+                score = candidate_score(target, channel, feed, stream)
+                if score < 0:
+                    continue
+                options.append({"url": stream["url"], "source": "iptv-org",
+                    "score": score, "tvg_id": f"{cid}@{feed_id}" if feed_id else cid,
+                    "quality": stream.get("quality") or feed.get("format"),
+                    "repository": "iptv-org/iptv",
+                    "language_state": "language_verified" if "rus" in feed.get("languages", [])
+                        or "eng" in feed.get("languages", []) else "language_unverified"})
+        for candidate in ai_candidates:
+            if _channel_key(candidate.get("name", "")) != _channel_key(target.name):
+                continue
+            if not _ai_language_allowed(target, candidate):
+                continue
+            try:
+                age_days = max(0, (datetime.now(timezone.utc).date() -
+                                   datetime.fromisoformat(candidate["source_date"]).date()).days)
+            except (KeyError, TypeError, ValueError):
+                age_days = 180
+            recency_bonus = max(0, 20 - age_days // 9)
+            priority_bonus = {"P1": 5, "P2": 3, "P3": 1}.get(candidate.get("priority"), 0)
+            options.append({"url": candidate["url"], "source": "ai_google_sheets",
+                "score": 10 + (10 if candidate.get("language_state") == "language_inferred" else 0)
+                    + recency_bonus + priority_bonus,
+                "tvg_id": target.tvg_id, "quality": None,
+                "repository": candidate.get("repository"),
+                "source_file": candidate.get("source_file"),
+                "source_date": candidate.get("source_date"),
+                "language_state": candidate.get("language_state", "language_unverified"),
+                })
+        unique, seen = [], set()
+        for option in sorted(options, key=lambda item: (item["score"], item["source"] == "previous"), reverse=True):
+            if option["url"] in seen:
+                continue
+            seen.add(option["url"])
+            unique.append(option)
+
+        chosen, target_checked = None, []
+        for option in unique[:12]:
+            if option["url"] not in checks:
+                checks[option["url"]] = probe(option["url"])
+            check = checks[option["url"]]
+            row = {"name": target.name, "url": redact_url(option["url"]), "source": option["source"],
+                   "repository": option.get("repository"), "source_file": option.get("source_file"),
+                   "source_date": option.get("source_date"), "result": check,
+                   "checked_at": datetime.now(timezone.utc).isoformat()}
+            validations.append(row)
+            target_checked.append(row)
+            if check.get("state") in {"accessible", "accessible_non_hls"}:
+                chosen = (option, check)
+                break
+        if chosen is None and unique:
+            security_failures = {"credential_in_url", "unsafe_url", "private_host", "unsafe redirect"}
+            eligible_fallbacks = [item for item in unique if
+                checks.get(item["url"], {}).get("reason") not in security_failures]
+            if eligible_fallbacks:
+                fallback = next((item for item in eligible_fallbacks if item["source"] == "previous"),
+                                eligible_fallbacks[0])
+                chosen = (fallback, checks.get(fallback["url"], {"state": "not_checked", "reason": "probe_limit"}))
+        if chosen is None:
+            missing.append({"name": target.name, "tvg_id": target.tvg_id or None,
+                            "priority": target.priority, "reason": "no exact eligible candidate"})
+            continue
+        option, access = chosen
+        result = {"name": target.name, "tvg_id": option.get("tvg_id") or target.tvg_id,
+            "priority": target.priority, "url": option["url"], "source": option["source"],
+            "repository": option.get("repository"), "quality": option.get("quality"),
+            "quality_state": "reported" if option.get("quality") else "unknown",
+            "matched": True, "access_check": access,
+            "language_state": option.get("language_state", "language_unverified"),
+            "previous_url_replaced": bool(prior and prior.get("url") != option["url"]),
+            "replacement_reason": ("previous URL failed technical check or eligibility policy"
+                                   if prior and prior.get("url") != option["url"] else None),
+            "candidates_checked": len(target_checked), "checked_at": datetime.now(timezone.utc).isoformat()}
+        found.append(result)
+        if option["url"] not in emitted:
+            emitted.add(option["url"])
+            group, name = target.group.replace('"', "'"), target.name.replace('"', "'")
+            lines.extend([f'#EXTINF:-1 tvg-id="{result["tvg_id"]}" group-title="{group}",{name}', option["url"]])
+    status = {"source": "iptv-org + ai_google_sheets", "found": found, "missing": missing,
+        "target_count": len(targets), "found_count": len(found), "playlist_entry_count": len(emitted),
+        "ai_candidates_loaded": len(ai_candidates),
+        "ai_candidates_checked": sum(row["source"] == "ai_google_sheets" for row in validations),
+        "automatic_replacements": sum(item["previous_url_replaced"] for item in found)}
+    return "\n".join(lines) + "\n", status, validations
+
+
 def assert_no_mass_loss(previous_found: int, current_found: int) -> None:
     if previous_found >= 5 and current_found < max(5, previous_found // 2):
         raise RuntimeError(f"mass match loss: {current_found} vs previous {previous_found}; preserving playlist")
+
+
+def should_retain_previous_playlist(previous_found: int, verified_count: int, has_playlist: bool) -> bool:
+    return has_playlist and previous_found >= 5 and verified_count < max(5, previous_found // 2)
 
 
 def main() -> int:
@@ -415,21 +622,35 @@ def main() -> int:
     status: dict | None = None
     try:
         targets = parse_readme(README.read_text(encoding="utf-8"))
+        try:
+            previous = json.loads(STATUS.read_text(encoding="utf-8")) if STATUS.exists() else {}
+        except (OSError, ValueError):
+            previous = {}
+        candidates_url = os.environ.get("AI_CANDIDATES_CSV_URL", CSV_URL)
+        candidates, sheet_state = fetch_candidates(candidates_url)
         channels, feeds, streams = (fetch_json("channels.json"), fetch_json("feeds.json"),
                                     fetch_json("streams.json"))
-        output, status = build(targets, channels, streams, feeds)
+        output, status, candidate_validation = build_with_validation(
+            targets, channels, streams, feeds, candidates, previous)
         status["updated_at"] = datetime.now(timezone.utc).isoformat()
         status["state"] = "ok"
-        old_found = 0
-        if STATUS.exists():
-            try:
-                old_found = int(json.loads(STATUS.read_text(encoding="utf-8")).get("found_count", 0))
-            except (ValueError, TypeError):
-                pass
+        status["candidate_sheet"] = sheet_state
+        old_found = int(previous.get("found_count", 0) or 0)
         # A 50% drop is treated as an upstream outage/data accident; retain last good playlist.
         assert_no_mass_loss(old_found, status["found_count"])
         checked_at = datetime.now(timezone.utc).isoformat()
-        failures = validate_found_streams(status["found"])
+        failures = []
+        for item in status["found"]:
+            result = item.get("access_check", {})
+            if result.get("state") not in {"accessible", "accessible_non_hls"}:
+                failures.append({"name": item["name"], "tvg_id": item["tvg_id"],
+                    "stage": result.get("stage", "probe"), "reason": result.get("reason", "not checked"),
+                    "http_status": result.get("http_status")})
+        failures.extend({"name": item["name"], "tvg_id": item.get("tvg_id"),
+                         "stage": "candidate matching", "reason": item["reason"]}
+                        for item in status["missing"])
+        if failures or status["missing"]:
+            status["state"] = "partial"
         environment = "GitHub Actions runner" if os.environ.get("GITHUB_ACTIONS") == "true" \
             else "local runner network"
         status["access_check"] = {
@@ -438,9 +659,18 @@ def main() -> int:
             "failed_count": len(failures),
         }
         status["access_failures"] = failures
+        status["verified_count"] = sum(item["access_check"].get("state") in {"accessible", "accessible_non_hls"}
+                                       for item in status["found"])
         append_errors(failures, checked_at, environment)
-        PLAYLIST.write_text(output, encoding="utf-8")
+        if should_retain_previous_playlist(old_found, status["verified_count"], PLAYLIST.exists()):
+            status["previous_playlist_retained"] = True
+            status["state"] = "degraded_mass_probe_failure"
+        else:
+            PLAYLIST.write_text(output, encoding="utf-8")
         STATUS.write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        validation_doc = {"checked_at": checked_at, "candidate_sheet": sheet_state,
+                          "candidates_checked": len(candidate_validation), "candidates": candidate_validation}
+        VALIDATION.write_text(json.dumps(validation_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Updated: {status['found_count']}/{status['target_count']} targets; {status['playlist_entry_count']} unique URLs")
         return 0
     except (OSError, ValueError, urllib.error.URLError, json.JSONDecodeError, RuntimeError) as exc:

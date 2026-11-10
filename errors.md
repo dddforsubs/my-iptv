@@ -119,3 +119,41 @@
 - **Documentary+ International** (`DocumentaryPlus.us@International`) — этап `playlist`, HTTP 404: Not Found.
 - **Docurama** (`Docurama.us@SD`) — этап `playlist`, HTTP 502: Bad Gateway.
 - **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `playlist`, HTTP 403: Forbidden.
+
+## Новые отказы 2026-11-10T20:47:16.976071+00:00 — local runner network
+
+- **National Geographic HD** (`NationalGeographic.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Живая Природа** (`Zhivayapriroda.ru@HD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic** (`NationalGeographic.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic Wild** (`NationalGeographicWild.ru@SD`) — этап `playlist`: credential_in_url.
+- **Живая природа HD** (`Zhivayapriroda.ru@HD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **History HD** (`History.us@East`) — этап `candidate matching`: no exact eligible candidate.
+- **H2 (History 2)** (`History2LatinAmerica.us@Panregional`) — этап `candidate matching`: no exact eligible candidate.
+- **Viasat History CEE HD** (`ViasatHistory.cz@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Viasat Nature CEE HD** (`ViasatNature.cz@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Viasat Explore CEE HD** (`ViasatExplore.cz@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **MiniMax Мегамир HD** — этап `candidate matching`: no exact eligible candidate.
+- **MiniMax Микромир** — этап `candidate matching`: no exact eligible candidate.
+- **Точка РФ** (`TochkaRF.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-10T20:51:12.251411+00:00 — local runner network
+
+- **National Geographic Wild** (`NationalGeographicWild.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-10T20:54:43.714737+00:00 — local runner network
+
+- **Nat Geo Wild** (`NationalGeographicWild.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **365 дней ТВ** (`365daysTV.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **365 дней TV** (`365daysTV.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **TiJi** (`TiJi.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+
+## Новые отказы 2026-11-10T20:56:25.134491+00:00 — local runner network
+
+- **История** (`Istoriya.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **Зоопарк** (`Zoopark.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **Nick Jr.** (`NickJr.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+
+## Новые отказы 2026-11-10T20:59:57.824787+00:00 — local runner network
+
+- **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **История** (`Istoriya.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.

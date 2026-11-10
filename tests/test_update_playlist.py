@@ -109,6 +109,11 @@ class PlaylistTests(unittest.TestCase):
             updater.assert_no_mass_loss(40, 10)
         updater.assert_no_mass_loss(40, 20)
 
+    def test_mass_probe_failure_preserves_previous_playlist(self):
+        self.assertTrue(updater.should_retain_previous_playlist(40, 8, True))
+        self.assertFalse(updater.should_retain_previous_playlist(40, 20, True))
+        self.assertFalse(updater.should_retain_previous_playlist(40, 0, False))
+
 
 if __name__ == "__main__":
     unittest.main()
