@@ -537,19 +537,19 @@
     },
     {
       "name": "Viasat History CEE HD",
-      "tvg_id": null,
+      "tvg_id": "ViasatHistory.cz@SD",
       "priority": "A",
       "reason": "no matching iptv-org stream"
     },
     {
       "name": "Viasat Nature CEE HD",
-      "tvg_id": null,
+      "tvg_id": "ViasatNature.cz@SD",
       "priority": "A",
       "reason": "no matching iptv-org stream"
     },
     {
       "name": "Viasat Explore CEE HD",
-      "tvg_id": null,
+      "tvg_id": "ViasatExplore.cz@SD",
       "priority": "A",
       "reason": "no matching iptv-org stream"
     },
@@ -560,7 +560,7 @@
       "reason": "no matching iptv-org stream"
     },
     {
-      "name": "MiniMax (название обрезано на фото)",
+      "name": "MiniMax Микромир",
       "tvg_id": null,
       "priority": "A",
       "reason": "no matching iptv-org stream"
@@ -575,6 +575,6 @@
   "target_count": 73,
   "found_count": 65,
   "playlist_entry_count": 56,
-  "updated_at": "2026-11-10T18:47:14.187837+00:00",
+  "updated_at": "2026-11-10T18:57:10.600164+00:00",
   "state": "ok"
 }
