@@ -36,6 +36,7 @@ class Target:
     priority: str = "B"
     candidate_ids: list[str] = field(default_factory=list)
     strict_candidates: bool = False
+    preferred_urls: list[str] = field(default_factory=list)
 
 
 def markdown_cells(line: str) -> list[str]:
@@ -96,6 +97,28 @@ def parse_readme(text: str) -> list[Target]:
                                       f"{language} / HD preferred", "C", ids, True))
     if not targets:
         raise ValueError("No channel tables found in README.md")
+    preferred_urls: dict[str, list[str]] = {}
+    in_url_preferences = False
+    for line in text.splitlines():
+        if line.startswith("### Предпочтительные URL внутри тех же feed"):
+            in_url_preferences = True
+            continue
+        if line.startswith("## ") or line.startswith("### "):
+            in_url_preferences = False
+        if not in_url_preferences or not line.startswith("|"):
+            continue
+        cells = markdown_cells(line)
+        ident = cells[0].strip("`") if cells else ""
+        if len(cells) < 2 or not re.fullmatch(r"[A-Za-z0-9.@_-]+", ident):
+            continue
+        urls = re.findall(r"`(https?://[^`]+)`", cells[-1])
+        if urls:
+            preferred_urls[ident] = urls
+    for target in targets:
+        for ident in [target.tvg_id, *target.candidate_ids]:
+            if ident in preferred_urls:
+                target.preferred_urls = preferred_urls[ident]
+                break
     return targets
 
 
@@ -151,6 +174,8 @@ def candidate_score(target: Target, channel: dict, feed: dict, stream: dict) -> 
         if ".pl@" in cid.lower() or "polsat" in cid.lower():
             return -1
         score += 500
+    if stream.get("url") in target.preferred_urls:
+        score += 10_000 - target.preferred_urls.index(stream["url"]) * 100
     quality = str(stream.get("quality") or feed.get("format", "")).upper()
     if "HD" in target.preference.upper():
         numbers = [int(value) for value in re.findall(r"\d+", quality)]

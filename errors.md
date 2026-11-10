@@ -56,3 +56,45 @@
 - **Карусель** (`Carousel.ru@SD`) — этап `playlist`: request timed out.
 - **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `playlist`, HTTP 403: Forbidden.
 - **ABC Kids** (`ABCKids.au@Sydney`) — этап `media segment`, HTTP 200: server returned an error page instead of a segment.
+
+## Проверка 2026-11-10T19:24:09.853682+00:00 — local runner network
+
+- **Discovery Channel HD** (`DiscoveryChannel.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic HD** (`NationalGeographic.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **Nat Geo Wild** (`NationalGeographicWild.ru@HD`) — этап `playlist`: [Errno 61] Connection refused.
+- **В мире животных HD** (`Vmirezhivotnykh.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Discovery Channel** (`DiscoveryChannel.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic** (`NationalGeographic.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **National Geographic Wild** (`NationalGeographicWild.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **Investigation Discovery** (`InvestigationDiscovery.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **History US East** (`History.us@East`) — этап `playlist`, HTTP 403: Forbidden.
+- **Наука** (`Nauka.ru@SD`) — этап `playlist`: request timed out.
+- **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `playlist`: request timed out.
+- **История** (`Istoriya.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **В мире животных** (`Vmirezhivotnykh.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Travel+Adventure** (`TravelPlusAdventure.ru@SD`) — этап `playlist`: request timed out.
+- **Зоопарк** (`Zoopark.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **Documentary+ International** (`DocumentaryPlus.us@International`) — этап `playlist`, HTTP 404: Not Found.
+- **Docurama** (`Docurama.us@SD`) — этап `playlist`, HTTP 502: Bad Gateway.
+- **TiJi** (`TiJi.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `playlist`, HTTP 403: Forbidden.
+
+## Проверка 2026-11-10T19:25:21.315959+00:00 — local runner network
+
+- **National Geographic HD** (`NationalGeographic.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **Nat Geo Wild** (`NationalGeographicWild.ru@HD`) — этап `playlist`: [Errno 61] Connection refused.
+- **В мире животных HD** (`Vmirezhivotnykh.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic** (`NationalGeographic.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **National Geographic Wild** (`NationalGeographicWild.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **Animal Planet** (`AnimalPlanet.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Investigation Discovery** (`InvestigationDiscovery.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **History US East** (`History.us@East`) — этап `playlist`, HTTP 403: Forbidden.
+- **Наука** (`Nauka.ru@SD`) — этап `playlist`: request timed out.
+- **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `playlist`: request timed out.
+- **История** (`Istoriya.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **В мире животных** (`Vmirezhivotnykh.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Travel+Adventure** (`TravelPlusAdventure.ru@SD`) — этап `playlist`: request timed out.
+- **Зоопарк** (`Zoopark.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **Documentary+ International** (`DocumentaryPlus.us@International`) — этап `playlist`, HTTP 404: Not Found.
+- **Docurama** (`Docurama.us@SD`) — этап `playlist`, HTTP 502: Bad Gateway.
+- **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `playlist`, HTTP 403: Forbidden.

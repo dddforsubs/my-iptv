@@ -9,10 +9,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -39,7 +39,7 @@
       "access_check": {
         "state": "restricted_or_unavailable",
         "stage": "playlist",
-        "reason": "[Errno 111] Connection refused"
+        "reason": "[Errno 61] Connection refused"
       }
     },
     {
@@ -51,7 +51,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "playlist",
+        "stage": "media playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -116,14 +116,14 @@
       "name": "365 дней ТВ",
       "tvg_id": "365daysTV.ru@SD",
       "priority": "A",
-      "url": "http://stream.mcquack.net/70/index.m3u8",
+      "url": "https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8",
       "quality": "576p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "media playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -148,10 +148,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -191,7 +191,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "playlist",
+        "stage": "media playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -219,7 +219,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "playlist",
+        "stage": "media playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -232,10 +232,10 @@
       "quality": "720p",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "playlist",
+        "reason": "Forbidden",
+        "http_status": 403
       }
     },
     {
@@ -371,7 +371,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "playlist",
+        "stage": "media playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -408,14 +408,14 @@
       "name": "365 дней TV",
       "tvg_id": "365daysTV.ru@SD",
       "priority": "B",
-      "url": "http://stream.mcquack.net/70/index.m3u8",
+      "url": "https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8",
       "quality": "576p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "media playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -519,13 +519,14 @@
       "name": "Docurama",
       "tvg_id": "Docurama.us@SD",
       "priority": "B",
-      "url": "https://docurama-plex-ingest.cinedigm.com/playlist.m3u8",
+      "url": "https://docurama-tcl.amagi.tv/playlist.m3u8",
       "quality": "1080p",
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
         "stage": "playlist",
-        "reason": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1147)"
+        "reason": "Bad Gateway",
+        "http_status": 502
       }
     },
     {
@@ -798,53 +799,56 @@
       "name": "Мульт",
       "tvg_id": "Mult.ru@SD",
       "priority": "C",
-      "url": "http://31.148.48.15/Mult_HD/index.m3u8",
-      "quality": "1080p",
+      "url": "https://stream8.cinerama.uz/1246/tracks-v1a1/mono.m3u8",
+      "quality": "576p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "request timed out"
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
       "name": "TiJi",
       "tvg_id": "TiJi.ru@SD",
       "priority": "C",
-      "url": "http://flussonic.linkintel.ru/tiji/index.m3u8",
+      "url": "https://stream8.cinerama.uz/1441/tracks-v1a1/mono.m3u8",
       "quality": "576p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "request timed out"
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
       "name": "Nick Jr.",
       "tvg_id": "NickJr.ru@SD",
       "priority": "C",
-      "url": "http://stream.mcquack.net/220/index.m3u8",
+      "url": "https://stream8.cinerama.uz/1501/playlist.m3u8",
       "quality": "576p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
       "name": "Карусель",
       "tvg_id": "Carousel.ru@SD",
       "priority": "C",
-      "url": "http://31.148.48.15/Karusel_HD/index.m3u8",
-      "quality": "1080p",
+      "url": "https://stream.smotrim.ru/hls2/karusel/playlist_3.m3u8",
+      "quality": "576p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "request timed out"
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -883,10 +887,10 @@
       "quality": "576i",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "media segment",
-        "reason": "server returned an error page instead of a segment",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -957,21 +961,14 @@
   "target_count": 73,
   "found_count": 65,
   "playlist_entry_count": 56,
-  "updated_at": "2026-11-10T19:15:19.998537+00:00",
+  "updated_at": "2026-11-10T19:25:21.314011+00:00",
   "state": "ok",
   "access_check": {
-    "environment": "GitHub Actions runner",
-    "checked_at": "2026-11-10T19:15:19.999134+00:00",
-    "failed_count": 25
+    "environment": "local runner network",
+    "checked_at": "2026-11-10T19:25:21.315959+00:00",
+    "failed_count": 17
   },
   "access_failures": [
-    {
-      "name": "Discovery Channel HD",
-      "tvg_id": "DiscoveryChannel.ru@SD",
-      "stage": "playlist",
-      "reason": "response is not an HLS playlist",
-      "http_status": 200
-    },
     {
       "name": "National Geographic HD",
       "tvg_id": "NationalGeographic.ru@SD",
@@ -983,27 +980,13 @@
       "name": "Nat Geo Wild",
       "tvg_id": "NationalGeographicWild.ru@HD",
       "stage": "playlist",
-      "reason": "[Errno 111] Connection refused",
+      "reason": "[Errno 61] Connection refused",
       "http_status": null
     },
     {
       "name": "В мире животных HD",
       "tvg_id": "Vmirezhivotnykh.ru@SD",
-      "stage": "playlist",
-      "reason": "response is not an HLS playlist",
-      "http_status": 200
-    },
-    {
-      "name": "365 дней ТВ",
-      "tvg_id": "365daysTV.ru@SD",
       "stage": "media playlist",
-      "reason": "response is not an HLS playlist",
-      "http_status": 200
-    },
-    {
-      "name": "Discovery Channel",
-      "tvg_id": "DiscoveryChannel.ru@SD",
-      "stage": "playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
     },
@@ -1024,16 +1007,23 @@
     {
       "name": "Animal Planet",
       "tvg_id": "AnimalPlanet.ru@SD",
-      "stage": "playlist",
+      "stage": "media playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
     },
     {
       "name": "Investigation Discovery",
       "tvg_id": "InvestigationDiscovery.ru@SD",
-      "stage": "playlist",
+      "stage": "media playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
+    },
+    {
+      "name": "History US East",
+      "tvg_id": "History.us@East",
+      "stage": "playlist",
+      "reason": "Forbidden",
+      "http_status": 403
     },
     {
       "name": "Наука",
@@ -1059,13 +1049,6 @@
     {
       "name": "В мире животных",
       "tvg_id": "Vmirezhivotnykh.ru@SD",
-      "stage": "playlist",
-      "reason": "response is not an HLS playlist",
-      "http_status": 200
-    },
-    {
-      "name": "365 дней TV",
-      "tvg_id": "365daysTV.ru@SD",
       "stage": "media playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
@@ -1095,36 +1078,8 @@
       "name": "Docurama",
       "tvg_id": "Docurama.us@SD",
       "stage": "playlist",
-      "reason": "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1147)",
-      "http_status": null
-    },
-    {
-      "name": "Мульт",
-      "tvg_id": "Mult.ru@SD",
-      "stage": "playlist",
-      "reason": "request timed out",
-      "http_status": null
-    },
-    {
-      "name": "TiJi",
-      "tvg_id": "TiJi.ru@SD",
-      "stage": "playlist",
-      "reason": "request timed out",
-      "http_status": null
-    },
-    {
-      "name": "Nick Jr.",
-      "tvg_id": "NickJr.ru@SD",
-      "stage": "playlist",
-      "reason": "response is not an HLS playlist",
-      "http_status": 200
-    },
-    {
-      "name": "Карусель",
-      "tvg_id": "Carousel.ru@SD",
-      "stage": "playlist",
-      "reason": "request timed out",
-      "http_status": null
+      "reason": "Bad Gateway",
+      "http_status": 502
     },
     {
       "name": "CBeebies",
@@ -1132,13 +1087,6 @@
       "stage": "playlist",
       "reason": "Forbidden",
       "http_status": 403
-    },
-    {
-      "name": "ABC Kids",
-      "tvg_id": "ABCKids.au@Sydney",
-      "stage": "media segment",
-      "reason": "server returned an error page instead of a segment",
-      "http_status": 200
     }
   ]
 }
