@@ -98,3 +98,24 @@
 - **Documentary+ International** (`DocumentaryPlus.us@International`) — этап `playlist`, HTTP 404: Not Found.
 - **Docurama** (`Docurama.us@SD`) — этап `playlist`, HTTP 502: Bad Gateway.
 - **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `playlist`, HTTP 403: Forbidden.
+
+## Проверка 2026-11-10T19:26:05.491099+00:00 — GitHub Actions runner
+
+- **Discovery Channel HD** (`DiscoveryChannel.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic HD** (`NationalGeographic.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **Nat Geo Wild** (`NationalGeographicWild.ru@HD`) — этап `playlist`: [Errno 111] Connection refused.
+- **В мире животных HD** (`Vmirezhivotnykh.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **Discovery Channel** (`DiscoveryChannel.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **National Geographic** (`NationalGeographic.ru@SD`) — этап `playlist`, HTTP 404: Not Found.
+- **National Geographic Wild** (`NationalGeographicWild.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **Animal Planet** (`AnimalPlanet.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Investigation Discovery** (`InvestigationDiscovery.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+- **Наука** (`Nauka.ru@SD`) — этап `playlist`: request timed out.
+- **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `playlist`: request timed out.
+- **История** (`Istoriya.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **В мире животных** (`Vmirezhivotnykh.ru@SD`) — этап `playlist`, HTTP 200: response is not an HLS playlist.
+- **Travel+Adventure** (`TravelPlusAdventure.ru@SD`) — этап `playlist`: request timed out.
+- **Зоопарк** (`Zoopark.ru@SD`) — этап `playlist`, HTTP 403: Forbidden.
+- **Documentary+ International** (`DocumentaryPlus.us@International`) — этап `playlist`, HTTP 404: Not Found.
+- **Docurama** (`Docurama.us@SD`) — этап `playlist`, HTTP 502: Bad Gateway.
+- **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `playlist`, HTTP 403: Forbidden.

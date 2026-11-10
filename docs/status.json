@@ -9,10 +9,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "media playlist",
+        "reason": "response is not an HLS playlist",
+        "http_status": 200
       }
     },
     {
@@ -39,7 +39,7 @@
       "access_check": {
         "state": "restricted_or_unavailable",
         "stage": "playlist",
-        "reason": "[Errno 61] Connection refused"
+        "reason": "[Errno 111] Connection refused"
       }
     },
     {
@@ -51,7 +51,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "media playlist",
+        "stage": "playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -148,10 +148,10 @@
       "quality": "1080p",
       "matched": true,
       "access_check": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "media playlist",
+        "reason": "response is not an HLS playlist",
+        "http_status": 200
       }
     },
     {
@@ -232,10 +232,10 @@
       "quality": "720p",
       "matched": true,
       "access_check": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "Forbidden",
-        "http_status": 403
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       }
     },
     {
@@ -371,7 +371,7 @@
       "matched": true,
       "access_check": {
         "state": "restricted_or_unavailable",
-        "stage": "media playlist",
+        "stage": "playlist",
         "reason": "response is not an HLS playlist",
         "http_status": 200
       }
@@ -961,14 +961,21 @@
   "target_count": 73,
   "found_count": 65,
   "playlist_entry_count": 56,
-  "updated_at": "2026-11-10T19:25:21.314011+00:00",
+  "updated_at": "2026-11-10T19:26:05.490663+00:00",
   "state": "ok",
   "access_check": {
-    "environment": "local runner network",
-    "checked_at": "2026-11-10T19:25:21.315959+00:00",
-    "failed_count": 17
+    "environment": "GitHub Actions runner",
+    "checked_at": "2026-11-10T19:26:05.491099+00:00",
+    "failed_count": 18
   },
   "access_failures": [
+    {
+      "name": "Discovery Channel HD",
+      "tvg_id": "DiscoveryChannel.ru@SD",
+      "stage": "media playlist",
+      "reason": "response is not an HLS playlist",
+      "http_status": 200
+    },
     {
       "name": "National Geographic HD",
       "tvg_id": "NationalGeographic.ru@SD",
@@ -980,12 +987,19 @@
       "name": "Nat Geo Wild",
       "tvg_id": "NationalGeographicWild.ru@HD",
       "stage": "playlist",
-      "reason": "[Errno 61] Connection refused",
+      "reason": "[Errno 111] Connection refused",
       "http_status": null
     },
     {
       "name": "В мире животных HD",
       "tvg_id": "Vmirezhivotnykh.ru@SD",
+      "stage": "playlist",
+      "reason": "response is not an HLS playlist",
+      "http_status": 200
+    },
+    {
+      "name": "Discovery Channel",
+      "tvg_id": "DiscoveryChannel.ru@SD",
       "stage": "media playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
@@ -1019,13 +1033,6 @@
       "http_status": 200
     },
     {
-      "name": "History US East",
-      "tvg_id": "History.us@East",
-      "stage": "playlist",
-      "reason": "Forbidden",
-      "http_status": 403
-    },
-    {
       "name": "Наука",
       "tvg_id": "Nauka.ru@SD",
       "stage": "playlist",
@@ -1049,7 +1056,7 @@
     {
       "name": "В мире животных",
       "tvg_id": "Vmirezhivotnykh.ru@SD",
-      "stage": "media playlist",
+      "stage": "playlist",
       "reason": "response is not an HLS playlist",
       "http_status": 200
     },
