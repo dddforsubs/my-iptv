@@ -1,0 +1,502 @@
+{
+  "source": "iptv-org/iptv",
+  "found": [
+    {
+      "name": "Discovery Channel HD",
+      "tvg_id": "DiscoveryChannel.ru",
+      "priority": "A",
+      "url": "http://stream.mcquack.net/177/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "National Geographic HD",
+      "tvg_id": "NationalGeographic.ru",
+      "priority": "A",
+      "url": "http://dtv.vol.net.ua/National_Geographic-HD/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Nat Geo Wild",
+      "tvg_id": "NationalGeographicWild.ru",
+      "priority": "A",
+      "url": "http://178.76.68.60:7442/50/mpegts",
+      "quality": null,
+      "matched": true
+    },
+    {
+      "name": "В мире животных HD",
+      "tvg_id": "Vmirezhivotnykh.ru",
+      "priority": "A",
+      "url": "http://stream.mcquack.net/241/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "History HD",
+      "tvg_id": "vijuPlusPlanet.ru",
+      "priority": "A",
+      "url": "http://stream.mcquack.net/240/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "viju History HD",
+      "tvg_id": "vijuHistory.ru",
+      "priority": "A",
+      "url": "http://46.53.200.153:7777/play/a01j/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "viju Nature HD",
+      "tvg_id": "vijuNature.ru",
+      "priority": "A",
+      "url": "http://46.53.200.153:7777/play/a01k/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "viju Explore",
+      "tvg_id": "vijuExplore.ru",
+      "priority": "A",
+      "url": "http://46.53.200.153:7777/play/a01i/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "Живая Природа",
+      "tvg_id": "Zhivayapriroda.ru",
+      "priority": "A",
+      "url": "http://stream.mcquack.net/225/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "365 дней ТВ",
+      "tvg_id": "365daysTV.ru",
+      "priority": "A",
+      "url": "http://stream.mcquack.net/70/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "English Club TV",
+      "tvg_id": "EnglishClubTV.uk",
+      "priority": "A",
+      "url": "https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8",
+      "quality": null,
+      "matched": true
+    },
+    {
+      "name": "Discovery Channel",
+      "tvg_id": "DiscoveryChannel.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/177/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "National Geographic",
+      "tvg_id": "NationalGeographic.ru",
+      "priority": "B",
+      "url": "http://dtv.vol.net.ua/National_Geographic-HD/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "National Geographic Wild",
+      "tvg_id": "NationalGeographicWild.ru",
+      "priority": "B",
+      "url": "http://178.76.68.60:7442/50/mpegts",
+      "quality": null,
+      "matched": true
+    },
+    {
+      "name": "Animal Planet",
+      "tvg_id": "AnimalPlanet.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/114/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "viju History",
+      "tvg_id": "vijuHistory.ru",
+      "priority": "B",
+      "url": "http://46.53.200.153:7777/play/a01j/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "Investigation Discovery",
+      "tvg_id": "InvestigationDiscovery.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/205/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "History US East",
+      "tvg_id": "History.us",
+      "priority": "B",
+      "url": "http://212.5.144.156:8080/history/index.m3u8",
+      "quality": "720p",
+      "matched": true
+    },
+    {
+      "name": "BBC Earth Czechia",
+      "tvg_id": "BBCEarth.uk",
+      "priority": "B",
+      "url": "https://amg00793-amg00793c6-firetv-us-4067.playouts.now.amagi.tv/playlist.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Наука",
+      "tvg_id": "Nauka.ru",
+      "priority": "B",
+      "url": "http://31.148.48.15/Nauka_2.0/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Моя Планета",
+      "tvg_id": "MoyaPlaneta.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/124/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "История",
+      "tvg_id": "Istoriya.ru",
+      "priority": "B",
+      "url": "https://fs.uplink.kz/istoriya/mono.m3u8?token=onlinetv",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "Живая природа HD",
+      "tvg_id": "Zhivayapriroda.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/225/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "В мире животных",
+      "tvg_id": "Vmirezhivotnykh.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/241/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "viju Nature",
+      "tvg_id": "vijuNature.ru",
+      "priority": "B",
+      "url": "http://46.53.200.153:7777/play/a01k/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "viju Explore",
+      "tvg_id": "vijuExplore.ru",
+      "priority": "B",
+      "url": "http://46.53.200.153:7777/play/a01i/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "365 дней TV",
+      "tvg_id": "365daysTV.ru",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/70/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "RTG TV HD",
+      "tvg_id": "RTGTV.ru",
+      "priority": "B",
+      "url": "http://46.53.200.153:7777/play/a00u/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Travel+Adventure",
+      "tvg_id": "TravelPlusAdventure.ru",
+      "priority": "B",
+      "url": "http://77.232.131.211/TravelAdventureHD/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Просвещение",
+      "tvg_id": "Prosveshchenie.ru",
+      "priority": "B",
+      "url": "http://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "Большая Азия",
+      "tvg_id": "BigAsia.ru",
+      "priority": "B",
+      "url": "http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8",
+      "quality": "720p",
+      "matched": true
+    },
+    {
+      "name": "Зоопарк",
+      "tvg_id": "Zoopark.ru",
+      "priority": "B",
+      "url": "https://fs.uplink.kz/zoopark/mono.m3u8?token=onlinetv",
+      "quality": "576p",
+      "matched": true
+    },
+    {
+      "name": "Documentary+",
+      "tvg_id": "DocumentaryPlus.us",
+      "priority": "B",
+      "url": "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Documentary+ International",
+      "tvg_id": "DocumentaryPlus.us",
+      "priority": "B",
+      "url": "https://1d153317c8db4250b3789601274e2402.mediatailor.us-west-2.amazonaws.com/v1/master/ba62fe743df0fe93366eba3a257d792884136c7f/LINEAR-887-DOCUMENTARYINTERNATIONAL-DOCUMENTARYPLUS/mt/documentaryplus/887/hls/master/playlist.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Docurama",
+      "tvg_id": "Docurama.us",
+      "priority": "B",
+      "url": "https://docurama-plex-ingest.cinedigm.com/playlist.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "History Hit",
+      "tvg_id": "HistoryHit.uk",
+      "priority": "B",
+      "url": "https://lds-timeline-rakuten.amagi.tv/playlist.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Wonder",
+      "tvg_id": "Wonder.uk",
+      "priority": "B",
+      "url": "https://lds-wonder-rakuten.amagi.tv/playlist.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "CGTN Documentary",
+      "tvg_id": "CGTNDocumentary.cn",
+      "priority": "B",
+      "url": "https://amg00405-rakutentv-cgtndocumentary-rakuten-0ql8j.amagi.tv/master.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "China Travel",
+      "tvg_id": "ChinaTravel.cn",
+      "priority": "B",
+      "url": "https://fastlive.cctvplus.com/out/v1/ca6f9297b7314a63959435028af287fc/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Discovering China",
+      "tvg_id": "DiscoveringChina.cn",
+      "priority": "B",
+      "url": "https://fastlive.cctvplus.com/out/v1/8442c3bfd4c64a3984389328f6087879/index.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "NHK World-Japan",
+      "tvg_id": "NHKWorldJapan.jp",
+      "priority": "B",
+      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "BBC News",
+      "tvg_id": "BBCNews.uk",
+      "priority": "B",
+      "url": "https://vs-cmaf-push-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_news_channel_hd/hevc_iptv_mse_v0.mpd",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "CNN International",
+      "tvg_id": "zenith.fr",
+      "priority": "B",
+      "url": "https://live.azenagroup.com/zenith/index.ll.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Al Jazeera English",
+      "tvg_id": "AlJazeera.qa",
+      "priority": "B",
+      "url": "https://live-hls-apps-aja-fa.getaj.net/AJA/01.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "France 24 English",
+      "tvg_id": "France24.fr",
+      "priority": "B",
+      "url": "https://live.france24.com/hls/live/2037222-b/F24_AR_HI_HLS/master_5000.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "DW English",
+      "tvg_id": "DW.de",
+      "priority": "B",
+      "url": "https://dwamdstream103.akamaized.net/hls/live/2015526/dwstream103/master.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "Euronews English",
+      "tvg_id": "EuronewsEnglish.fr",
+      "priority": "B",
+      "url": "https://dash4.antik.sk/live/test_euronews/playlist.m3u8",
+      "quality": null,
+      "matched": true
+    },
+    {
+      "name": "Bloomberg TV",
+      "tvg_id": "BloombergTV.us",
+      "priority": "B",
+      "url": "https://bloomberg.com/media-manifest/streams/phoenix-us.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "CBS News 24/7",
+      "tvg_id": "CBSNews247.us",
+      "priority": "B",
+      "url": "https://jmp2.uk/plu-6350fdd266e9ea0007bedec5.m3u8",
+      "quality": "720p",
+      "matched": true
+    },
+    {
+      "name": "NBC News NOW",
+      "tvg_id": "NBCNewsNOW.us",
+      "priority": "B",
+      "url": "https://d1si3n1st4nkgb.cloudfront.net/10502/88896001/hls/master.m3u8?ads.xumo_channelId=88896001",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "ABC News Australia",
+      "tvg_id": "ABCNews.au",
+      "priority": "B",
+      "url": "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
+      "quality": "720p",
+      "matched": true
+    },
+    {
+      "name": "CGTN",
+      "tvg_id": "CGTN.cn",
+      "priority": "B",
+      "url": "https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8",
+      "quality": "1080p",
+      "matched": true
+    },
+    {
+      "name": "NHK World-Japan",
+      "tvg_id": "NHKWorldJapan.jp",
+      "priority": "B",
+      "url": "https://freem3u.xyz/api/live/play.m3u8?vid=106",
+      "quality": "1080p",
+      "matched": true
+    }
+  ],
+  "missing": [
+    {
+      "name": "H2 (History 2)",
+      "tvg_id": "History2LatinAmerica.us@Panregional",
+      "priority": "A",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Viasat History CEE HD",
+      "tvg_id": null,
+      "priority": "A",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Viasat Nature CEE HD",
+      "tvg_id": null,
+      "priority": "A",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Viasat Explore CEE HD",
+      "tvg_id": null,
+      "priority": "A",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "MiniMax Мегамир HD",
+      "tvg_id": null,
+      "priority": "A",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "MiniMax (название обрезано на фото)",
+      "tvg_id": null,
+      "priority": "A",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "History 2 Latin America (не H2 CEE)",
+      "tvg_id": "History2LatinAmerica.us@Panregional",
+      "priority": "B",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Polsat Viasat History PL (не CEE)",
+      "tvg_id": "PolsatViasatHistory.pl@SD",
+      "priority": "B",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Polsat Viasat Nature PL (не CEE)",
+      "tvg_id": "PolsatViasatNature.pl@SD",
+      "priority": "B",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Polsat Viasat Explore PL (не CEE)",
+      "tvg_id": "PolsatViasatExplore.pl@SD",
+      "priority": "B",
+      "reason": "no matching iptv-org stream"
+    },
+    {
+      "name": "Точка РФ",
+      "tvg_id": "TochkaRF.ru@SD",
+      "priority": "B",
+      "reason": "no matching iptv-org stream"
+    }
+  ],
+  "target_count": 64,
+  "found_count": 53,
+  "playlist_entry_count": 42,
+  "state": "ok",
+  "updated_at": "2026-11-10T18:19:42.586334+00:00"
+}
