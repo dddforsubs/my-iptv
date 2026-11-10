@@ -1,0 +1,46 @@
+name: ChatGPT Scheduled Task to Google Sheets probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      csv_url:
+        description: Anonymous HTTPS CSV export URL for the Instructions tab
+        required: true
+        type: string
+      expected_marker:
+        description: Marker that the ChatGPT Scheduled Task wrote into column B
+        required: true
+        default: IPTV-PROBE-20261110-X1
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  check-sheet-row:
+    name: Verify the Task-written Google Sheets row
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Download CSV and verify marker
+        env:
+          CSV_URL: ${{ inputs.csv_url }}
+          EXPECTED_MARKER: ${{ inputs.expected_marker }}
+          RESULT_PATH: probe_result.json
+        run: python scripts/check_chatgpt_sheets_probe.py
+
+      - name: Save probe result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chatgpt-sheets-probe-${{ github.run_id }}
+          path: probe_result.json
+          if-no-files-found: error
+          retention-days: 14
