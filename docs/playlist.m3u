@@ -6,13 +6,15 @@ http://stream.mcquack.net/116/index.m3u8
 #EXTINF:-1 tvg-id="NationalGeographicWild.ru@SD" group-title="Избранное",Nat Geo Wild
 https://stream8.cinerama.uz/1042/index.m3u8
 #EXTINF:-1 tvg-id="Vmirezhivotnykh.ru@SD" group-title="Избранное",В мире животных HD
-https://stream8.cinerama.uz/1404/index.m3u8
+http://stream.mcquack.net/241/index.m3u8
 #EXTINF:-1 tvg-id="vijuHistory.ru@SD" group-title="Избранное",viju History HD
 http://46.53.200.153:7777/play/a01j/index.m3u8
 #EXTINF:-1 tvg-id="vijuNature.ru@SD" group-title="Избранное",viju Nature HD
 http://46.53.200.153:7777/play/a01k/index.m3u8
 #EXTINF:-1 tvg-id="vijuExplore.ru@SD" group-title="Избранное",viju Explore
 http://46.53.200.153:7777/play/a01i/index.m3u8
+#EXTINF:-1 tvg-id="Zhivayapriroda.ru@HD" group-title="Избранное",Живая Природа
+http://stream.mcquack.net/225/index.m3u8
 #EXTINF:-1 tvg-id="365daysTV.ru@SD" group-title="Избранное",365 дней ТВ
 https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="EnglishClubTV.uk@SD" group-title="Избранное",English Club TV
@@ -27,6 +29,8 @@ https://vod.tuva.ru/nauka2/index.m3u8
 http://stream.mcquack.net/124/index.m3u8
 #EXTINF:-1 tvg-id="Istoriya.ru@SD" group-title="Познавательные RU",История
 https://stream8.cinerama.uz/1266/index.m3u8
+#EXTINF:-1 tvg-id="Vmirezhivotnykh.ru@SD" group-title="Познавательные RU",В мире животных
+https://stream8.cinerama.uz/1404/index.m3u8
 #EXTINF:-1 tvg-id="RTGTV.ru@HD" group-title="Познавательные RU",RTG TV HD
 http://46.53.200.153:7777/play/a00u/index.m3u8
 #EXTINF:-1 tvg-id="Prosveshchenie.ru@SD" group-title="Познавательные RU",Просвещение
