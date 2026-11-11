@@ -5,7 +5,7 @@
 > **Запрещено:** частные IPTV-аккаунты, логины, пароли, персональные ключи доступа, DRM и источники, для которых потребуется обход авторизации или ограничений доступа.
 > **Основа:** фотография избранного от 10.11.2026 + последняя доступная локальная сборка плейлиста от 10.11.2026 (47 M3U-записей) + согласованная подборка качественных детских каналов для возраста 4–5 лет. Проверенный удалённый `docs/playlist.m3u` на 10.11.2026 содержал 35 записей: это *публикуемый результат*, а не полный эталон желаемого.
 
-## 1. Приоритет A: обязательное избранное с фотографии
+## 1. Приоритет A: Избранное
 
 Эти названия и региональные версии сохраняются независимо от доступности открытого потока. Порядок в таблице — порядок слева направо, сверху вниз на фотографии.
 
@@ -16,7 +16,7 @@
 | 3 | Nat Geo Wild | RU / HD предпочтительно | `NationalGeographicWild.ru@SD` | предыдущий поток 576p; искать HD |
 | 4 | В мире животных HD | RU / HD | `Vmirezhivotnykh.ru@SD` | в предыдущей сборке SD; искать HD |
 | 5 | History HD | RU / HD предпочтительно | `History.us@East` | US East — не точное совпадение по языку/региону |
-| 6 | H2 (History 2) | RU / HD предпочтительно | `History2LatinAmerica.us@Panregional` | латиноамериканский feed — альтернатива, не эквивалент |
+| 6 | H2 (History 2) | RU / HD предпочтительно | — | точный русскоязычный feed не найден; латиноамериканскую версию не использовать как эквивалент |
 | 7 | viju History HD | RU / HD | `vijuHistory.ru@SD` | в предыдущей сборке, уточнять HD |
 | 8 | viju Nature HD | RU / HD | `vijuNature.ru@SD` | в предыдущей сборке, уточнять HD |
 | 9 | viju Explore | RU / HD предпочтительно | `vijuExplore.ru@SD` | в предыдущей сборке |
@@ -31,57 +31,42 @@
 
 ## 2. Приоритет B: весь сохранённый плейлист
 
-Это **47 записей** из последнего доступного локального M3U (10.11.2026). Запись может быть альтернативным региональным feed или дублировать тот же телеканал в другой группе. При будущем сопоставлении не удалять эти предпочтения молча; совпадающие потоки допускается дедуплицировать с сохранением покрытия.
+Эта таблица сохраняет **32 из 47 записей** последнего доступного локального M3U. Удалены History 2 Latin America, три польских Polsat Viasat, History US East, BBC Earth Czechia, Documentary+, Documentary+ International, Docurama, History Hit, Wonder, CGTN Documentary, China Travel и Discovering China; повторная запись NHK World-Japan сокращена до одной. Запись может дублировать тот же телеканал в другой группе. При будущем сопоставлении не удалять эти предпочтения молча; совпадающие потоки допускается дедуплицировать с сохранением покрытия.
 
 | № | Канал в плейлисте | `tvg-id` в последней сборке | Группа |
 |---:|---|---|---|
-| 1 | Discovery Channel | `DiscoveryChannel.ru@SD` | Познавательные RU |
-| 2 | National Geographic | `NationalGeographic.ru@SD` | Познавательные RU |
-| 3 | National Geographic Wild | `NationalGeographicWild.ru@SD` | Познавательные RU |
-| 4 | Animal Planet | `AnimalPlanet.ru@SD` | Познавательные RU |
-| 5 | viju History | `vijuHistory.ru@SD` | Познавательные RU |
-| 6 | Investigation Discovery | `InvestigationDiscovery.ru@SD` | Познавательные RU |
-| 7 | History US East | `History.us@East` | История EN |
-| 8 | History 2 Latin America (не H2 CEE) | `History2LatinAmerica.us@Panregional` | Региональные альтернативы |
-| 9 | Polsat Viasat History PL (не CEE) | `PolsatViasatHistory.pl@SD` | Региональные альтернативы |
-| 10 | Polsat Viasat Nature PL (не CEE) | `PolsatViasatNature.pl@SD` | Региональные альтернативы |
-| 11 | Polsat Viasat Explore PL (не CEE) | `PolsatViasatExplore.pl@SD` | Региональные альтернативы |
-| 12 | BBC Earth Czechia | `BBCEarth.uk@Czechia` | Региональные альтернативы |
-| 13 | Наука | `Nauka.ru@SD` | Познавательные RU |
-| 14 | Моя Планета | `MoyaPlaneta.ru@SD` | Познавательные RU |
-| 15 | История | `Istoriya.ru@SD` | Познавательные RU |
-| 16 | Живая природа HD | `Zhivayapriroda.ru@HD` | Познавательные RU |
-| 17 | В мире животных | `Vmirezhivotnykh.ru@SD` | Познавательные RU |
-| 18 | viju Nature | `vijuNature.ru@SD` | Познавательные RU |
-| 19 | viju Explore | `vijuExplore.ru@SD` | Познавательные RU |
-| 20 | 365 дней TV | `365daysTV.ru@SD` | Познавательные RU |
-| 21 | RTG TV HD | `RTGTV.ru@HD` | Познавательные RU |
-| 22 | Travel+Adventure | `TravelPlusAdventure.ru@SD` | Познавательные RU |
-| 23 | Точка РФ | `TochkaRF.ru@SD` | Познавательные RU |
-| 24 | Просвещение | `Prosveshchenie.ru@SD` | Познавательные RU |
-| 25 | Большая Азия | `BigAsia.ru@SD` | Познавательные RU |
-| 26 | Зоопарк | `Zoopark.ru@SD` | Познавательные RU |
-| 27 | Documentary+ | `DocumentaryPlus.us@US` | Documentary EN |
-| 28 | Documentary+ International | `DocumentaryPlus.us@International` | Documentary EN |
-| 29 | Docurama | `Docurama.us@SD` | Documentary EN |
-| 30 | History Hit | `HistoryHit.uk@SD` | History EN |
-| 31 | Wonder | `Wonder.uk@SD` | Documentary EN |
-| 32 | CGTN Documentary | `CGTNDocumentary.cn@SD` | Documentary EN |
-| 33 | China Travel | `ChinaTravel.cn@SD` | Travel EN |
-| 34 | Discovering China | `DiscoveringChina.cn@SD` | Travel EN |
-| 35 | NHK World-Japan | `NHKWorldJapan.jp@SD` | Culture EN |
-| 36 | BBC News | `BBCNews.uk@Europe` | World News EN |
-| 37 | CNN International | — | World News EN |
-| 38 | Al Jazeera English | `AlJazeera.qa@English` | World News EN |
-| 39 | France 24 English | `France24.fr@English` | World News EN |
-| 40 | DW English | `DW.de@English` | World News EN |
-| 41 | Euronews English | `EuronewsEnglish.fr@SD` | World News EN |
-| 42 | Bloomberg TV | `BloombergTV.us@US` | Business News EN |
-| 43 | CBS News 24/7 | `CBSNews247.us@SD` | US News EN |
-| 44 | NBC News NOW | `NBCNewsNOW.us@SD` | US News EN |
-| 45 | ABC News Australia | `ABCNews.au@Sydney` | World News EN |
-| 46 | CGTN | `CGTN.cn@SD` | World News EN |
-| 47 | NHK World-Japan | `NHKWorldJapan.jp@SD` | World News EN |
+| 18 | Discovery Channel | `DiscoveryChannel.ru@SD` | Познавательные RU |
+| 19 | National Geographic | `NationalGeographic.ru@SD` | Познавательные RU |
+| 20 | National Geographic Wild | `NationalGeographicWild.ru@SD` | Познавательные RU |
+| 21 | Animal Planet | `AnimalPlanet.ru@SD` | Познавательные RU |
+| 22 | viju History | `vijuHistory.ru@SD` | Познавательные RU |
+| 23 | Investigation Discovery | `InvestigationDiscovery.ru@SD` | Познавательные RU |
+| 24 | Наука | `Nauka.ru@SD` | Познавательные RU |
+| 25 | Моя Планета | `MoyaPlaneta.ru@SD` | Познавательные RU |
+| 26 | История | `Istoriya.ru@SD` | Познавательные RU |
+| 27 | Живая природа HD | `Zhivayapriroda.ru@HD` | Познавательные RU |
+| 28 | В мире животных | `Vmirezhivotnykh.ru@SD` | Познавательные RU |
+| 29 | viju Nature | `vijuNature.ru@SD` | Познавательные RU |
+| 30 | viju Explore | `vijuExplore.ru@SD` | Познавательные RU |
+| 31 | 365 дней TV | `365daysTV.ru@SD` | Познавательные RU |
+| 32 | RTG TV HD | `RTGTV.ru@HD` | Познавательные RU |
+| 33 | Travel+Adventure | `TravelPlusAdventure.ru@SD` | Познавательные RU |
+| 34 | Точка РФ | `TochkaRF.ru@SD` | Познавательные RU |
+| 35 | Просвещение | `Prosveshchenie.ru@SD` | Познавательные RU |
+| 36 | Большая Азия | `BigAsia.ru@SD` | Познавательные RU |
+| 37 | Зоопарк | `Zoopark.ru@SD` | Познавательные RU |
+| 38 | BBC News | `BBCNews.uk@Europe` | World News EN |
+| 39 | CNN International | — | World News EN |
+| 40 | Al Jazeera English | `AlJazeera.qa@English` | World News EN |
+| 41 | France 24 English | `France24.fr@English` | World News EN |
+| 42 | DW English | `DW.de@English` | World News EN |
+| 43 | Euronews English | `EuronewsEnglish.fr@SD` | World News EN |
+| 44 | Bloomberg TV | `BloombergTV.us@US` | Business News EN |
+| 45 | CBS News 24/7 | `CBSNews247.us@SD` | US News EN |
+| 46 | NBC News NOW | `NBCNewsNOW.us@SD` | US News EN |
+| 47 | ABC News Australia | `ABCNews.au@Sydney` | World News EN |
+| 48 | CGTN | `CGTN.cn@SD` | World News EN |
+| 49 | NHK World-Japan | `NHKWorldJapan.jp@SD` | World News EN |
 
 ## 3. Приоритет C: качественные детские каналы (возраст 4–5 лет)
 
@@ -89,21 +74,21 @@
 
 | № | Канал | `tvg-id` / допустимый feed | Язык | Приоритет | Почему включён / ограничения |
 |---:|---|---|---|---|---|
-| 1 | О! | `O.ru@SD` (вариант: `O.ru@International`) | RU | C1 — основной | Познавательные и развивающие передачи для дошкольников; международный feed допустим только при подходящем языке звука |
-| 2 | Мульт | `Mult.ru@SD` (вариант: `Mult.ru@International`) | RU | C1 — основной | Специализированная дошкольная анимация; без автоматической замены на другой канал со словом «мульт» |
-| 3 | TiJi | `TiJi.ru@SD` | RU | C1 — основной | Спокойные мультсериалы и социальные сюжеты для младшего возраста; важно сохранить русскоязычную версию |
-| 4 | Nick Jr. | `NickJr.ru@SD` | RU | C1 — основной | Обучающие и приключенческие мультсериалы; в эфире бывают более динамичные программы, требуется родительский отбор |
-| 5 | Карусель | `Carousel.ru@SD` (вариант: `Carousel.ru@Plus4`, но со сдвигом эфира) | RU | C1 — основной | Российские мультфильмы и детские программы; канал рассчитан на более широкий возрастной диапазон |
-| 6 | PBS Kids | `PBSKids.us@SD` | EN | C2 — английский | Образовательные сюжеты, чтение, математика, эмоциональные навыки; выбирать англоязычный американский feed |
-| 7 | CBeebies | `BBCFourCBeebies.uk@HD` (или `CBeebies.uk@HD` при совместимом формате) | EN | C2 — английский | BBC-контент для дошкольников; совместный BBC Four/CBeebies feed может показывать CBeebies только часть суток, а другой источник может быть DASH вместо HLS |
-| 8 | ABC Kids | `ABCKids.au@Sydney` | EN | C2 — английский | Австралийские дошкольные программы; учитывать возможную геоблокировку и часовой пояс эфира |
-| 9 | TVOKids | `TVOKids.ca@SD` | EN | C2 — английский | Канадские образовательные детские передачи; проверять реальную доступность из Сербии |
+| 50 | О! | `O.ru@SD` (вариант: `O.ru@International`) | RU | C1 — основной | Познавательные и развивающие передачи для дошкольников; международный feed допустим только при подходящем языке звука |
+| 51 | Мульт | `Mult.ru@SD` (вариант: `Mult.ru@International`) | RU | C1 — основной | Специализированная дошкольная анимация; без автоматической замены на другой канал со словом «мульт» |
+| 52 | TiJi | `TiJi.ru@SD` | RU | C1 — основной | Спокойные мультсериалы и социальные сюжеты для младшего возраста; важно сохранить русскоязычную версию |
+| 53 | Nick Jr. | `NickJr.ru@SD` | RU | C1 — основной | Обучающие и приключенческие мультсериалы; в эфире бывают более динамичные программы, требуется родительский отбор |
+| 54 | Карусель | `Carousel.ru@SD` (вариант: `Carousel.ru@Plus4`, но со сдвигом эфира) | RU | C1 — основной | Российские мультфильмы и детские программы; канал рассчитан на более широкий возрастной диапазон |
+| 55 | PBS Kids | `PBSKids.us@SD` | EN | C2 — английский | Образовательные сюжеты, чтение, математика, эмоциональные навыки; выбирать англоязычный американский feed |
+| 56 | CBeebies | `BBCFourCBeebies.uk@HD` (или `CBeebies.uk@HD` при совместимом формате) | EN | C2 — английский | BBC-контент для дошкольников; совместный BBC Four/CBeebies feed может показывать CBeebies только часть суток, а другой источник может быть DASH вместо HLS |
+| 57 | ABC Kids | `ABCKids.au@Sydney` | EN | C2 — английский | Австралийские дошкольные программы; учитывать возможную геоблокировку и часовой пояс эфира |
+| 58 | TVOKids | `TVOKids.ca@SD` | EN | C2 — английский | Канадские образовательные детские передачи; проверять реальную доступность из Сербии |
 
 **Правила для детской категории:**
 
 1. Эталон фиксирует **именно эти девять каналов**, а не все каналы Kids из `iptv-org`. Не добавлять автоматически случайные мультсериальные, музыкальные, рекламные и FAST-каналы.
 2. Сохранять две группы в плейлисте: `Детские RU` и `Kids EN`; детский раздел не смешивать с познавательными и новостными каналами.
-3. Для пунктов 1–5 нужен **русский звук**. Англоязычная или польская версия с тем же брендом не считается равнозначной. Для пунктов 6–9 приоритет — оригинальная английская версия.
+3. Для каналов «О!», «Мульт», TiJi, Nick Jr. и «Карусель» нужен **русский звук**. Англоязычная или польская версия с тем же брендом не считается равнозначной. Для PBS Kids, CBeebies, ABC Kids и TVOKids приоритет — оригинальная английская версия.
 4. Возрастная пригодность оценивается по назначению канала, **не гарантирует пригодности каждого отдельного выпуска**; это не заменяет родительского контроля.
 5. Использовать прямые URL из `iptv-org` и точные кандидаты Google Sheets только после проверки безопасности URL и HLS-цепочки. Не считать DASH `.mpd` совместимым с Televizo без отдельной поддержки.
 6. Не удалять канал из эталона, если поток пропал. Сохранять языковое предпочтение: для каналов RU требуется русский звук или явно обозначенный `language_inferred`; англоязычная версия не подходит. При отсутствии проверенной замены оставлять прежний URL как непроверенный fallback и указывать причину в статусе и `errors.md`.
