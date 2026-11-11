@@ -1,28 +1,40 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="DiscoveryChannel.ru@SD" group-title="Избранное",Discovery Channel HD
+https://stream8.cinerama.uz/1039/index.m3u8
 #EXTINF:-1 tvg-id="NationalGeographic.ru@SD" group-title="Избранное",National Geographic HD
 http://stream.mcquack.net/116/index.m3u8
+#EXTINF:-1 tvg-id="NationalGeographicWild.ru@SD" group-title="Избранное",Nat Geo Wild
+https://stream8.cinerama.uz/1042/index.m3u8
 #EXTINF:-1 tvg-id="Vmirezhivotnykh.ru@SD" group-title="Избранное",В мире животных HD
-http://stream.mcquack.net/241/index.m3u8
+https://stream8.cinerama.uz/1404/index.m3u8
 #EXTINF:-1 tvg-id="vijuHistory.ru@SD" group-title="Избранное",viju History HD
 http://46.53.200.153:7777/play/a01j/index.m3u8
 #EXTINF:-1 tvg-id="vijuNature.ru@SD" group-title="Избранное",viju Nature HD
 http://46.53.200.153:7777/play/a01k/index.m3u8
 #EXTINF:-1 tvg-id="vijuExplore.ru@SD" group-title="Избранное",viju Explore
 http://46.53.200.153:7777/play/a01i/index.m3u8
-#EXTINF:-1 tvg-id="Zhivayapriroda.ru@HD" group-title="Избранное",Живая Природа
-http://stream.mcquack.net/225/index.m3u8
+#EXTINF:-1 tvg-id="365daysTV.ru@SD" group-title="Избранное",365 дней ТВ
+https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="EnglishClubTV.uk@SD" group-title="Избранное",English Club TV
 https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="AnimalPlanet.ru@SD" group-title="Познавательные RU",Animal Planet
+https://stream8.cinerama.uz/1043/index.m3u8
+#EXTINF:-1 tvg-id="InvestigationDiscovery.ru@SD" group-title="Познавательные RU",Investigation Discovery
+http://stream.mcquack.net/205/index.m3u8
 #EXTINF:-1 tvg-id="Nauka.ru@SD" group-title="Познавательные RU",Наука
 https://vod.tuva.ru/nauka2/index.m3u8
 #EXTINF:-1 tvg-id="MoyaPlaneta.ru@SD" group-title="Познавательные RU",Моя Планета
 http://stream.mcquack.net/124/index.m3u8
+#EXTINF:-1 tvg-id="Istoriya.ru@SD" group-title="Познавательные RU",История
+https://stream8.cinerama.uz/1266/index.m3u8
 #EXTINF:-1 tvg-id="RTGTV.ru@HD" group-title="Познавательные RU",RTG TV HD
 http://46.53.200.153:7777/play/a00u/index.m3u8
 #EXTINF:-1 tvg-id="Prosveshchenie.ru@SD" group-title="Познавательные RU",Просвещение
 http://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8
 #EXTINF:-1 tvg-id="BigAsia.ru@SD" group-title="Познавательные RU",Большая Азия
 http://live-bigasia.cdnvideo.ru/bigasia/bigasia.smil/playlist.m3u8
+#EXTINF:-1 tvg-id="Zoopark.ru@SD" group-title="Познавательные RU",Зоопарк
+https://stream8.cinerama.uz/1417/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="BBCNews.uk@Europe" group-title="World News EN",BBC News
 https://dash2.antik.sk/live/test_bbc_world/playlist.m3u8
 #EXTINF:-1 tvg-id="CNNInternational.us@NorthAmerica" group-title="World News EN",CNN International
@@ -50,11 +62,11 @@ https://cdn.pishow.tv/ott/live/455/master.m3u8
 #EXTINF:-1 tvg-id="O.ru@International" group-title="Детские RU",О!
 http://88.212.15.50/live/test_telekanal_o/playlist.m3u8
 #EXTINF:-1 tvg-id="Mult.ru@SD" group-title="Детские RU",Мульт
-http://stream.mcquack.net/232/index.m3u8
+https://stream8.cinerama.uz/1246/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="TiJi.ru@SD" group-title="Детские RU",TiJi
-http://stream.mcquack.net/111/index.m3u8
+https://stream8.cinerama.uz/1441/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="NickJr.ru@SD" group-title="Детские RU",Nick Jr.
-http://stream.mcquack.net/220/index.m3u8
+https://stream8.cinerama.uz/1501/playlist.m3u8
 #EXTINF:-1 tvg-id="Carousel.ru@SD" group-title="Детские RU",Карусель
 https://stream.smotrim.ru/hls2/karusel/playlist_3.m3u8
 #EXTINF:-1 tvg-id="PBSKids.us@SD" group-title="Kids EN",PBS Kids

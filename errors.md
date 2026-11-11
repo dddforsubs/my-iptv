@@ -175,3 +175,8 @@
 - **Travel+Adventure** (`TravelPlusAdventure.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
 - **Зоопарк** (`Zoopark.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
 - **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-11T11:42:31.320264+00:00 — GitHub Actions runner
+
+- **Живая Природа** (`Zhivayapriroda.ru@HD`) — этап `candidate matching`: no exact eligible candidate.
+- **Живая природа HD** (`Zhivayapriroda.ru@HD`) — этап `candidate matching`: no exact eligible candidate.
