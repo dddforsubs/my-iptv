@@ -13,10 +13,10 @@ spec.loader.exec_module(updater)
 class PlaylistTests(unittest.TestCase):
     def test_readme_tables(self):
         targets = updater.parse_readme((ROOT / "README.md").read_text(encoding="utf-8"))
-        self.assertEqual(len(targets), 73)
+        self.assertEqual(len(targets), 58)
         self.assertEqual(targets[0].name, "Discovery Channel HD")
         self.assertEqual(sum(t.priority == "A" for t in targets), 17)
-        self.assertEqual(sum(t.priority == "B" for t in targets), 47)
+        self.assertEqual(sum(t.priority == "B" for t in targets), 32)
         children = [t for t in targets if t.priority == "C"]
         self.assertEqual(len(children), 9)
         self.assertEqual(children[0].candidate_ids, ["O.ru@SD", "O.ru@International"])
