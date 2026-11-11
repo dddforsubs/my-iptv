@@ -140,25 +140,25 @@ class CandidateSelectionTests(unittest.TestCase):
         self.assertEqual(status["found_count"], 0)
         self.assertEqual(output, "#EXTM3U\n")
 
-    def test_failed_probe_never_becomes_verified(self):
+    def test_failed_probe_is_not_published(self):
         target = updater.Target("Discovery Channel", "DiscoveryChannel.ru@SD", "RU", "RU", "A")
         candidate = {"name": target.name, "url": "https://ai.example/fail.m3u8", "language": "RU",
                      "language_state": "language_inferred", "repository": "public/iptv"}
-        _, status, _ = updater.build_with_validation([target], [], [], [], [candidate], {},
+        output, status, _ = updater.build_with_validation([target], [], [], [], [candidate], {},
             lambda _url: {"state": "restricted_or_unavailable", "reason": "403"})
-        selected = status["found"][0]
-        self.assertEqual(selected["access_check"]["state"], "restricted_or_unavailable")
-        self.assertNotEqual(selected["access_check"]["state"], "verified")
+        self.assertEqual(status["found_count"], 0)
+        self.assertEqual(status["missing"][0]["name"], target.name)
+        self.assertEqual(output, "#EXTM3U\n")
 
-    def test_ambiguous_failure_keeps_previous_as_unverified_fallback(self):
+    def test_ambiguous_failure_does_not_republish_previous_source(self):
         target = updater.Target("Discovery Channel", "DiscoveryChannel.ru@SD", "RU", "RU", "A")
         old = {"found": [{"name": target.name, "tvg_id": target.tvg_id,
                           "url": "https://previous.example/live.m3u8"}]}
-        _, status, _ = updater.build_with_validation([target], [], [], [], [], old,
+        output, status, _ = updater.build_with_validation([target], [], [], [], [], old,
             lambda _url: {"state": "restricted_or_unavailable", "reason": "timeout"})
-        self.assertEqual(status["found"][0]["source"], "previous")
-        self.assertEqual(status["found"][0]["access_check"]["state"], "restricted_or_unavailable")
-        self.assertNotEqual(status["found"][0]["access_check"]["state"], "verified")
+        self.assertEqual(status["found_count"], 0)
+        self.assertEqual(status["missing"][0]["name"], target.name)
+        self.assertEqual(output, "#EXTM3U\n")
 
     def test_confirmed_hd_feed_can_improve_working_sd_stream(self):
         target = updater.Target("Discovery Channel HD", "DiscoveryChannel.ru@SD", "Избранное",

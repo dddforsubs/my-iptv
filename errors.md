@@ -1,6 +1,6 @@
 # IPTV: ошибки проверки доступности
 
-Накопительный журнал отказов проверки из сети запуска генератора. Проверка выполняется без cookies, авторизации и специальных заголовков доступа. Записи добавляются в конец; ошибка проверки не исключает найденный канал из `docs/playlist.m3u`.
+Накопительный журнал отказов проверки из сети запуска генератора. Проверка выполняется без cookies, авторизации и специальных заголовков доступа. Записи добавляются в конец. Непроверенный либо проваливший проверку URL не включается в публикуемый `docs/playlist.m3u`; при отсутствии проверенной альтернативы канал сохраняется в эталоне и отмечается отсутствующим в `docs/status.json`.
 
 ## Проверка 2026-11-10T19:14:01.198451+00:00
 
@@ -161,3 +161,17 @@
 ## Новые отказы 2026-11-11T10:56:35.758715+00:00 — GitHub Actions runner
 
 - **H2 (History 2)** — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-11T11:37:14.016959+00:00 — local runner network
+
+- **Discovery Channel HD** (`DiscoveryChannel.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Nat Geo Wild** (`NationalGeographicWild.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **365 дней ТВ** (`365daysTV.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Discovery Channel** (`DiscoveryChannel.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Animal Planet** (`AnimalPlanet.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Investigation Discovery** (`InvestigationDiscovery.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **История** (`Istoriya.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **365 дней TV** (`365daysTV.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Travel+Adventure** (`TravelPlusAdventure.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Зоопарк** (`Zoopark.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **CBeebies** (`BBCFourCBeebies.uk@HD`) — этап `candidate matching`: no exact eligible candidate.

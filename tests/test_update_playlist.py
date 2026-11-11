@@ -11,6 +11,24 @@ spec.loader.exec_module(updater)
 
 
 class PlaylistTests(unittest.TestCase):
+    def test_cinerama_domain_is_risk_signal_not_global_blocklist(self):
+        self.assertTrue(updater.is_cinerama_risk("https://stream8.cinerama.uz/a.m3u8"))
+        self.assertTrue(updater.is_cinerama_risk("https://cinerama.uz/a.m3u8"))
+        self.assertFalse(updater.is_cinerama_risk("https://example.com/cinerama.uz/a.m3u8"))
+
+    def test_failed_candidate_is_quarantined_and_not_published(self):
+        target = updater.Target("Example", "Example.ru@SD", "RU", "RU", "B", ["Example.ru@SD"])
+        channels = [{"id": "Example.ru", "name": "Example", "languages": ["rus"]}]
+        feeds = [{"channel": "Example.ru", "id": "SD", "languages": ["rus"]}]
+        streams = [{"channel": "Example.ru", "feed": "SD", "url": "https://bad.example/x.m3u8"}]
+        output, status, validations = updater.build_with_validation(
+            [target], channels, streams, feeds, [], {}, probe=lambda _: {
+                "state": "advertisement_detected", "reason": "promotional slate"})
+        self.assertEqual(updater.parse_m3u(output), [])
+        self.assertEqual(status["found_count"], 0)
+        self.assertEqual(status["missing"][0]["name"], "Example")
+        self.assertEqual(status["quarantined_urls"][0]["state"], "advertisement_detected")
+
     def test_readme_tables(self):
         targets = updater.parse_readme((ROOT / "README.md").read_text(encoding="utf-8"))
         self.assertEqual(len(targets), 58)

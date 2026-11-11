@@ -7,6 +7,9 @@ import concurrent.futures
 import os
 import re
 import socket
+import shutil
+import subprocess
+import tempfile
 import sys
 from datetime import datetime, timezone
 from urllib.parse import urljoin, urlsplit
@@ -28,6 +31,8 @@ PROBE_TIMEOUT = 8
 PROBE_WORKERS = 12
 MAX_PLAYLIST_BYTES = 256 * 1024
 MAX_SEGMENT_BYTES = 1024
+CINERAMA_DOMAIN = "cinerama.uz"
+CINERAMA_MARKERS = ("cinerama", "cinerama.uz", "кинотеатр cinerama")
 
 
 @dataclass
@@ -350,6 +355,51 @@ def check_stream_access(url: str) -> dict:
         return {"state": "check_error", "stage": "probe", "reason": str(exc) or type(exc).__name__}
 
 
+def is_cinerama_risk(url: str) -> bool:
+    """Treat the domain as a content-review signal, not an automatic blocklist."""
+    try:
+        host = (urlsplit(url).hostname or "").lower().rstrip(".")
+        return host == CINERAMA_DOMAIN or host.endswith("." + CINERAMA_DOMAIN)
+    except ValueError:
+        return False
+
+
+def inspect_cinerama_content(url: str) -> dict:
+    """Decode a live frame and OCR it when runner tools are available."""
+    if not shutil.which("ffmpeg") or not shutil.which("tesseract"):
+        return {"state": "unverified", "reason": "ffmpeg/tesseract unavailable"}
+    with tempfile.TemporaryDirectory(prefix="iptv-frame-") as temp_dir:
+        frame = str(Path(temp_dir) / "frame.png")
+        try:
+            subprocess.run(["ffmpeg", "-nostdin", "-loglevel", "error", "-y", "-i", url,
+                            "-frames:v", "1", "-vf", "scale=640:-1", frame],
+                           timeout=20, check=True, capture_output=True)
+            result = subprocess.run(["tesseract", frame, "stdout", "-l", "eng+rus"],
+                                    timeout=10, check=True, capture_output=True, text=True)
+            detected = any(marker in result.stdout.casefold() for marker in CINERAMA_MARKERS)
+            return {"state": "advertisement_detected" if detected else "content_checked",
+                    "reason": "CINERAMA marker recognized" if detected else "no known CINERAMA marker"}
+        except (OSError, subprocess.SubprocessError) as exc:
+            return {"state": "unverified", "reason": type(exc).__name__}
+
+
+def probe_candidate(url: str) -> dict:
+    """Probe transport first; inspect risky sources twice before quarantining."""
+    result = check_stream_access(url)
+    if not is_cinerama_risk(url) or result.get("state") not in {"accessible", "accessible_non_hls"}:
+        return result
+    inspections = [inspect_cinerama_content(url), inspect_cinerama_content(url)]
+    result["content_check"] = inspections
+    states = [item["state"] for item in inspections]
+    if states.count("advertisement_detected") >= 1:
+        return {**result, "state": "advertisement_detected", "stage": "content",
+                "reason": "CINERAMA promotional slate detected in sampled frame"}
+    if states.count("content_checked") < 2:
+        return {**result, "state": "content_unverified", "stage": "content",
+                "reason": "could not verify content in two sampled frames"}
+    return result
+
+
 def validate_found_streams(found: list[dict]) -> list[dict]:
     """Check each distinct selected URL once and copy its result to matching targets."""
     urls = list(dict.fromkeys(item["url"] for item in found))
@@ -456,7 +506,7 @@ def _ai_language_allowed(target: Target, candidate: dict) -> bool:
 
 def build_with_validation(targets: list[Target], channels: list[dict], streams: list[dict],
                           feeds: list[dict], ai_candidates: list[dict], previous: dict,
-                          probe=check_stream_access) -> tuple[str, dict, list[dict]]:
+                          probe=probe_candidate) -> tuple[str, dict, list[dict]]:
     """Try the prior URL first, then exact iptv-org and exact-name sheet candidates."""
     by_id = {str(c.get("id", "")): c for c in channels}
     feed_map = {(str(f.get("channel", "")), str(f.get("id", ""))): f for f in feeds}
@@ -566,20 +616,17 @@ def build_with_validation(targets: list[Target], channels: list[dict], streams: 
             row = {"name": target.name, "url": redact_url(option["url"]), "source": option["source"],
                    "repository": option.get("repository"), "source_file": option.get("source_file"),
                    "source_date": option.get("source_date"), "result": check,
+                   "quarantined": check.get("state") in {"advertisement_detected", "content_unverified"},
+                   "quarantine_reason": check.get("reason") if check.get("state") in {
+                       "advertisement_detected", "content_unverified"} else None,
                    "checked_at": datetime.now(timezone.utc).isoformat()}
             validations.append(row)
             target_checked.append(row)
             if check.get("state") in {"accessible", "accessible_non_hls"}:
                 chosen = (option, check)
                 break
-        if chosen is None and unique:
-            security_failures = {"credential_in_url", "unsafe_url", "private_host", "unsafe redirect"}
-            eligible_fallbacks = [item for item in unique if
-                checks.get(item["url"], {}).get("reason") not in security_failures]
-            if eligible_fallbacks:
-                fallback = next((item for item in eligible_fallbacks if item["source"] == "previous"),
-                                eligible_fallbacks[0])
-                chosen = (fallback, checks.get(fallback["url"], {"state": "not_checked", "reason": "probe_limit"}))
+        # Failed streams must never be republished as fallback. They remain in
+        # validation history and are retried on the next scheduled run.
         if chosen is None:
             missing.append({"name": target.name, "tvg_id": target.tvg_id or None,
                             "priority": target.priority, "reason": "no exact eligible candidate"})
@@ -604,7 +651,11 @@ def build_with_validation(targets: list[Target], channels: list[dict], streams: 
         "target_count": len(targets), "found_count": len(found), "playlist_entry_count": len(emitted),
         "ai_candidates_loaded": len(ai_candidates),
         "ai_candidates_checked": sum(row["source"] == "ai_google_sheets" for row in validations),
-        "automatic_replacements": sum(item["previous_url_replaced"] for item in found)}
+        "automatic_replacements": sum(item["previous_url_replaced"] for item in found),
+        "quarantined_urls": [{"name": row["name"], "url": row["url"],
+            "reason": row["result"].get("reason"), "state": row["result"].get("state"),
+            "checked_at": row["checked_at"]} for row in validations
+            if row["result"].get("state") in {"advertisement_detected", "content_unverified"}]}
     return "\n".join(lines) + "\n", status, validations
 
 
