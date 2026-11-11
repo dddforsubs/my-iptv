@@ -157,3 +157,7 @@
 
 - **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
 - **История** (`Istoriya.ru@SD`) — этап `media playlist`, HTTP 200: response is not an HLS playlist.
+
+## Новые отказы 2026-11-11T10:56:35.758715+00:00 — GitHub Actions runner
+
+- **H2 (History 2)** — этап `candidate matching`: no exact eligible candidate.
