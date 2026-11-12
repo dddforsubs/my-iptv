@@ -31,7 +31,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 2,
-      "checked_at": "2026-11-12T00:52:44.935329+00:00"
+      "checked_at": "2026-11-12T08:27:45.194038+00:00"
     },
     {
       "name": "National Geographic HD",
@@ -53,7 +53,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 2,
-      "checked_at": "2026-11-12T00:52:44.969476+00:00"
+      "checked_at": "2026-11-12T08:27:45.230225+00:00"
     },
     {
       "name": "Nat Geo Wild",
@@ -85,14 +85,14 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 2,
-      "checked_at": "2026-11-12T00:52:45.003548+00:00"
+      "checked_at": "2026-11-12T08:27:45.266115+00:00"
     },
     {
       "name": "В мире животных HD",
       "tvg_id": "Vmirezhivotnykh.ru@SD",
       "priority": "A",
       "url": "https://stream8.cinerama.uz/1404/index.m3u8",
-      "source": "ai_google_sheets",
+      "source": "previous",
       "repository": "ngrch/iptv",
       "quality": null,
       "quality_state": "unknown",
@@ -114,10 +114,10 @@
         ]
       },
       "language_state": "language_inferred",
-      "previous_url_replaced": true,
-      "replacement_reason": "previous URL failed technical check or eligibility policy",
+      "previous_url_replaced": false,
+      "replacement_reason": null,
       "candidates_checked": 2,
-      "checked_at": "2026-11-12T00:52:45.037739+00:00"
+      "checked_at": "2026-11-12T08:27:45.301506+00:00"
     },
     {
       "name": "viju History HD",
@@ -139,7 +139,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.154482+00:00"
+      "checked_at": "2026-11-12T08:27:45.419719+00:00"
     },
     {
       "name": "viju Nature HD",
@@ -161,7 +161,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.188811+00:00"
+      "checked_at": "2026-11-12T08:27:45.455463+00:00"
     },
     {
       "name": "viju Explore",
@@ -183,7 +183,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.223341+00:00"
+      "checked_at": "2026-11-12T08:27:45.491149+00:00"
     },
     {
       "name": "Живая Природа",
@@ -205,7 +205,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.371272+00:00"
+      "checked_at": "2026-11-12T08:27:45.639652+00:00"
     },
     {
       "name": "365 дней ТВ",
@@ -237,7 +237,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.405885+00:00"
+      "checked_at": "2026-11-12T08:27:45.675663+00:00"
     },
     {
       "name": "English Club TV",
@@ -259,7 +259,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.440500+00:00"
+      "checked_at": "2026-11-12T08:27:45.712212+00:00"
     },
     {
       "name": "Discovery Channel",
@@ -291,7 +291,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.572152+00:00"
+      "checked_at": "2026-11-12T08:27:45.840243+00:00"
     },
     {
       "name": "National Geographic",
@@ -313,7 +313,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.599431+00:00"
+      "checked_at": "2026-11-12T08:27:45.870654+00:00"
     },
     {
       "name": "Animal Planet",
@@ -345,7 +345,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.654724+00:00"
+      "checked_at": "2026-11-12T08:27:45.931122+00:00"
     },
     {
       "name": "viju History",
@@ -367,7 +367,29 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.681442+00:00"
+      "checked_at": "2026-11-12T08:27:45.962637+00:00"
+    },
+    {
+      "name": "Investigation Discovery",
+      "tvg_id": "InvestigationDiscovery.ru@SD",
+      "priority": "B",
+      "url": "http://stream.mcquack.net/205/index.m3u8",
+      "source": "iptv-org",
+      "repository": "iptv-org/iptv",
+      "quality": "1080p",
+      "quality_state": "reported",
+      "matched": true,
+      "access_check": {
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
+      },
+      "language_state": "language_verified",
+      "previous_url_replaced": false,
+      "replacement_reason": null,
+      "candidates_checked": 1,
+      "checked_at": "2026-11-12T08:27:45.992433+00:00"
     },
     {
       "name": "Наука",
@@ -389,7 +411,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.734796+00:00"
+      "checked_at": "2026-11-12T08:27:46.021838+00:00"
     },
     {
       "name": "Моя Планета",
@@ -411,7 +433,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.762138+00:00"
+      "checked_at": "2026-11-12T08:27:46.050715+00:00"
     },
     {
       "name": "История",
@@ -443,7 +465,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.791443+00:00"
+      "checked_at": "2026-11-12T08:27:46.078436+00:00"
     },
     {
       "name": "Живая природа HD",
@@ -465,7 +487,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.821260+00:00"
+      "checked_at": "2026-11-12T08:27:46.107362+00:00"
     },
     {
       "name": "В мире животных",
@@ -497,7 +519,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.849810+00:00"
+      "checked_at": "2026-11-12T08:27:46.136928+00:00"
     },
     {
       "name": "viju Nature",
@@ -519,7 +541,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.877853+00:00"
+      "checked_at": "2026-11-12T08:27:46.164748+00:00"
     },
     {
       "name": "viju Explore",
@@ -541,7 +563,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.905940+00:00"
+      "checked_at": "2026-11-12T08:27:46.192680+00:00"
     },
     {
       "name": "365 дней TV",
@@ -573,7 +595,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.934376+00:00"
+      "checked_at": "2026-11-12T08:27:46.220779+00:00"
     },
     {
       "name": "RTG TV HD",
@@ -595,7 +617,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:45.962386+00:00"
+      "checked_at": "2026-11-12T08:27:46.250956+00:00"
     },
     {
       "name": "Просвещение",
@@ -617,7 +639,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.045664+00:00"
+      "checked_at": "2026-11-12T08:27:46.340754+00:00"
     },
     {
       "name": "Большая Азия",
@@ -639,7 +661,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.074201+00:00"
+      "checked_at": "2026-11-12T08:27:46.372216+00:00"
     },
     {
       "name": "Зоопарк",
@@ -671,7 +693,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.102703+00:00"
+      "checked_at": "2026-11-12T08:27:46.402446+00:00"
     },
     {
       "name": "BBC News",
@@ -693,7 +715,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.130468+00:00"
+      "checked_at": "2026-11-12T08:27:46.432279+00:00"
     },
     {
       "name": "CNN International",
@@ -715,7 +737,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.177896+00:00"
+      "checked_at": "2026-11-12T08:27:46.479645+00:00"
     },
     {
       "name": "Al Jazeera English",
@@ -737,7 +759,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.205258+00:00"
+      "checked_at": "2026-11-12T08:27:46.510424+00:00"
     },
     {
       "name": "France 24 English",
@@ -759,7 +781,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.232439+00:00"
+      "checked_at": "2026-11-12T08:27:46.541187+00:00"
     },
     {
       "name": "DW English",
@@ -781,7 +803,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.259732+00:00"
+      "checked_at": "2026-11-12T08:27:46.571850+00:00"
     },
     {
       "name": "Euronews English",
@@ -803,7 +825,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.286902+00:00"
+      "checked_at": "2026-11-12T08:27:46.602846+00:00"
     },
     {
       "name": "Bloomberg TV",
@@ -825,7 +847,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.313814+00:00"
+      "checked_at": "2026-11-12T08:27:46.634924+00:00"
     },
     {
       "name": "CBS News 24/7",
@@ -847,7 +869,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.340709+00:00"
+      "checked_at": "2026-11-12T08:27:46.665861+00:00"
     },
     {
       "name": "NBC News NOW",
@@ -869,7 +891,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.367507+00:00"
+      "checked_at": "2026-11-12T08:27:46.696725+00:00"
     },
     {
       "name": "ABC News Australia",
@@ -891,7 +913,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.394005+00:00"
+      "checked_at": "2026-11-12T08:27:46.727223+00:00"
     },
     {
       "name": "CGTN",
@@ -913,7 +935,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.420644+00:00"
+      "checked_at": "2026-11-12T08:27:46.757302+00:00"
     },
     {
       "name": "NHK World-Japan",
@@ -935,7 +957,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.447547+00:00"
+      "checked_at": "2026-11-12T08:27:46.787067+00:00"
     },
     {
       "name": "О!",
@@ -957,7 +979,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.474507+00:00"
+      "checked_at": "2026-11-12T08:27:46.817392+00:00"
     },
     {
       "name": "Мульт",
@@ -989,7 +1011,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.501524+00:00"
+      "checked_at": "2026-11-12T08:27:46.847437+00:00"
     },
     {
       "name": "TiJi",
@@ -1021,7 +1043,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.528433+00:00"
+      "checked_at": "2026-11-12T08:27:46.877965+00:00"
     },
     {
       "name": "Nick Jr.",
@@ -1053,7 +1075,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.554923+00:00"
+      "checked_at": "2026-11-12T08:27:46.907859+00:00"
     },
     {
       "name": "Карусель",
@@ -1075,7 +1097,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.581953+00:00"
+      "checked_at": "2026-11-12T08:27:46.937486+00:00"
     },
     {
       "name": "PBS Kids",
@@ -1097,7 +1119,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.608667+00:00"
+      "checked_at": "2026-11-12T08:27:46.968518+00:00"
     },
     {
       "name": "ABC Kids",
@@ -1119,7 +1141,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.661661+00:00"
+      "checked_at": "2026-11-12T08:27:47.025805+00:00"
     },
     {
       "name": "TVOKids",
@@ -1141,7 +1163,7 @@
       "previous_url_replaced": false,
       "replacement_reason": null,
       "candidates_checked": 1,
-      "checked_at": "2026-11-12T00:52:46.688204+00:00"
+      "checked_at": "2026-11-12T08:27:47.054221+00:00"
     }
   ],
   "missing": [
@@ -1194,12 +1216,6 @@
       "reason": "no exact eligible candidate"
     },
     {
-      "name": "Investigation Discovery",
-      "tvg_id": "InvestigationDiscovery.ru@SD",
-      "priority": "B",
-      "reason": "no exact eligible candidate"
-    },
-    {
       "name": "Travel+Adventure",
       "tvg_id": "TravelPlusAdventure.ru@SD",
       "priority": "B",
@@ -1219,13 +1235,13 @@
     }
   ],
   "target_count": 58,
-  "found_count": 46,
-  "playlist_entry_count": 38,
+  "found_count": 47,
+  "playlist_entry_count": 39,
   "ai_candidates_loaded": 12,
-  "ai_candidates_checked": 3,
-  "automatic_replacements": 1,
+  "ai_candidates_checked": 2,
+  "automatic_replacements": 0,
   "quarantined_urls": [],
-  "updated_at": "2026-11-12T00:52:46.692491+00:00",
+  "updated_at": "2026-11-12T08:27:47.058533+00:00",
   "state": "partial",
   "candidate_sheet": {
     "available": true,
@@ -1234,8 +1250,8 @@
   },
   "access_check": {
     "environment": "GitHub Actions runner",
-    "checked_at": "2026-11-12T00:52:46.692506+00:00",
-    "failed_count": 12
+    "checked_at": "2026-11-12T08:27:47.058550+00:00",
+    "failed_count": 11
   },
   "access_failures": [
     {
@@ -1287,12 +1303,6 @@
       "reason": "no exact eligible candidate"
     },
     {
-      "name": "Investigation Discovery",
-      "tvg_id": "InvestigationDiscovery.ru@SD",
-      "stage": "candidate matching",
-      "reason": "no exact eligible candidate"
-    },
-    {
       "name": "Travel+Adventure",
       "tvg_id": "TravelPlusAdventure.ru@SD",
       "stage": "candidate matching",
@@ -1311,5 +1321,5 @@
       "reason": "no exact eligible candidate"
     }
   ],
-  "verified_count": 46
+  "verified_count": 47
 }
