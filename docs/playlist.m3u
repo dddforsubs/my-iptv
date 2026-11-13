@@ -1,6 +1,6 @@
 #EXTM3U
 #EXTINF:-1 tvg-id="DiscoveryChannel.ru@SD" group-title="Избранное",Discovery Channel HD
-https://stream8.cinerama.uz/1039/index.m3u8
+http://stream.mcquack.net/177/index.m3u8
 #EXTINF:-1 tvg-id="NationalGeographic.ru@SD" group-title="Избранное",National Geographic HD
 https://stream8.cinerama.uz/1041/index.m3u8
 #EXTINF:-1 tvg-id="NationalGeographicWild.ru@SD" group-title="Избранное",Nat Geo Wild
@@ -19,8 +19,12 @@ http://stream.mcquack.net/225/index.m3u8
 https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="EnglishClubTV.uk@SD" group-title="Избранное",English Club TV
 https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8
+#EXTINF:-1 tvg-id="DiscoveryChannel.ru@SD" group-title="Познавательные RU",Discovery Channel
+https://stream8.cinerama.uz/1039/index.m3u8
 #EXTINF:-1 tvg-id="AnimalPlanet.ru@SD" group-title="Познавательные RU",Animal Planet
 https://stream8.cinerama.uz/1043/index.m3u8
+#EXTINF:-1 tvg-id="InvestigationDiscovery.ru@SD" group-title="Познавательные RU",Investigation Discovery
+http://stream.mcquack.net/205/index.m3u8
 #EXTINF:-1 tvg-id="Nauka.ru@SD" group-title="Познавательные RU",Наука
 https://vod.tuva.ru/nauka2/index.m3u8
 #EXTINF:-1 tvg-id="MoyaPlaneta.ru@SD" group-title="Познавательные RU",Моя Планета
