@@ -13,16 +13,14 @@ http://46.53.200.153:7777/play/a01j/index.m3u8
 http://46.53.200.153:7777/play/a01k/index.m3u8
 #EXTINF:-1 tvg-id="vijuExplore.ru@SD" group-title="Избранное",viju Explore
 http://46.53.200.153:7777/play/a01i/index.m3u8
-#EXTINF:-1 tvg-id="Zhivayapriroda.ru@SD" group-title="Избранное",Живая Природа
-http://stream.mcquack.net/83/index.m3u8
+#EXTINF:-1 tvg-id="Zhivayapriroda.ru@HD" group-title="Избранное",Живая Природа
+http://stream.mcquack.net/225/index.m3u8
 #EXTINF:-1 tvg-id="365daysTV.ru@SD" group-title="Избранное",365 дней ТВ
 https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="EnglishClubTV.uk@SD" group-title="Избранное",English Club TV
 https://dash2.antik.sk/live/test_ectv_hd_1200/playlist.m3u8
 #EXTINF:-1 tvg-id="AnimalPlanet.ru@SD" group-title="Познавательные RU",Animal Planet
 https://stream8.cinerama.uz/1043/index.m3u8
-#EXTINF:-1 tvg-id="InvestigationDiscovery.ru@SD" group-title="Познавательные RU",Investigation Discovery
-http://stream.mcquack.net/205/index.m3u8
 #EXTINF:-1 tvg-id="Nauka.ru@SD" group-title="Познавательные RU",Наука
 https://vod.tuva.ru/nauka2/index.m3u8
 #EXTINF:-1 tvg-id="MoyaPlaneta.ru@SD" group-title="Познавательные RU",Моя Планета
