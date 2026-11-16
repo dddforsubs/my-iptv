@@ -1,28 +1,55 @@
 {
-  "checked_at": "2026-11-15T21:56:02.645594+00:00",
+  "checked_at": "2026-11-16T02:16:56.885229+00:00",
   "candidate_sheet": {
     "available": true,
     "http_status": 200,
     "rows_loaded": 12
   },
-  "candidates_checked": 58,
+  "candidates_checked": 55,
   "candidates": [
     {
       "name": "Discovery Channel HD",
       "url": "http://stream.mcquack.net/177/index.m3u8",
-      "source": "iptv-org",
+      "source": "previous",
       "repository": "iptv-org/iptv",
       "source_file": null,
       "source_date": null,
       "result": {
-        "state": "accessible",
-        "stage": "complete",
-        "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)"
+        "state": "restricted_or_unavailable",
+        "stage": "media playlist",
+        "reason": "response is not an HLS playlist",
+        "http_status": 200
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.326908+00:00"
+      "checked_at": "2026-11-16T02:16:56.083992+00:00"
+    },
+    {
+      "name": "Discovery Channel HD",
+      "url": "https://stream8.cinerama.uz/1039/index.m3u8",
+      "source": "ai_google_sheets",
+      "repository": "ngrch/iptv",
+      "source_file": "https://github.com/ngrch/iptv/blob/main/ru.m3u",
+      "source_date": "2026-10-31",
+      "result": {
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)",
+        "content_check": [
+          {
+            "state": "content_checked",
+            "reason": "no known CINERAMA marker"
+          },
+          {
+            "state": "content_checked",
+            "reason": "no known CINERAMA marker"
+          }
+        ]
+      },
+      "quarantined": false,
+      "quarantine_reason": null,
+      "checked_at": "2026-11-16T02:16:56.084017+00:00"
     },
     {
       "name": "National Geographic HD",
@@ -39,7 +66,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.357199+00:00"
+      "checked_at": "2026-11-16T02:16:56.104662+00:00"
     },
     {
       "name": "National Geographic HD",
@@ -66,7 +93,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.357219+00:00"
+      "checked_at": "2026-11-16T02:16:56.104677+00:00"
     },
     {
       "name": "Nat Geo Wild",
@@ -82,7 +109,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.386108+00:00"
+      "checked_at": "2026-11-16T02:16:56.120871+00:00"
     },
     {
       "name": "Nat Geo Wild",
@@ -109,7 +136,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.386133+00:00"
+      "checked_at": "2026-11-16T02:16:56.120888+00:00"
     },
     {
       "name": "В мире животных HD",
@@ -119,41 +146,14 @@
       "source_file": null,
       "source_date": null,
       "result": {
-        "state": "restricted_or_unavailable",
-        "stage": "media playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
-      },
-      "quarantined": false,
-      "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.413343+00:00"
-    },
-    {
-      "name": "В мире животных HD",
-      "url": "https://stream8.cinerama.uz/1404/index.m3u8",
-      "source": "previous",
-      "repository": "ngrch/iptv",
-      "source_file": null,
-      "source_date": null,
-      "result": {
         "state": "accessible",
         "stage": "complete",
         "http_status": 200,
-        "reason": "HLS playlist, 2 segment(s)",
-        "content_check": [
-          {
-            "state": "content_checked",
-            "reason": "no known CINERAMA marker"
-          },
-          {
-            "state": "content_checked",
-            "reason": "no known CINERAMA marker"
-          }
-        ]
+        "reason": "HLS playlist, 2 segment(s)"
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.413361+00:00"
+      "checked_at": "2026-11-16T02:16:56.136645+00:00"
     },
     {
       "name": "viju History HD",
@@ -170,7 +170,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.501174+00:00"
+      "checked_at": "2026-11-16T02:16:56.192714+00:00"
     },
     {
       "name": "viju Nature HD",
@@ -187,7 +187,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.525969+00:00"
+      "checked_at": "2026-11-16T02:16:56.208401+00:00"
     },
     {
       "name": "viju Explore",
@@ -204,7 +204,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.551292+00:00"
+      "checked_at": "2026-11-16T02:16:56.223882+00:00"
     },
     {
       "name": "Живая Природа",
@@ -214,53 +214,19 @@
       "source_file": null,
       "source_date": null,
       "result": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.664306+00:00"
-    },
-    {
-      "name": "Живая Природа",
-      "url": "http://s1.merlive.am/Jivaiapriroda/index.m3u8",
-      "source": "iptv-org",
-      "repository": "iptv-org/iptv",
-      "source_file": null,
-      "source_date": null,
-      "result": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "Not Found",
-        "http_status": 404
-      },
-      "quarantined": false,
-      "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.664346+00:00"
-    },
-    {
-      "name": "Живая Природа",
-      "url": "http://stream.mcquack.net/83/index.m3u8",
-      "source": "previous",
-      "repository": "iptv-org/iptv",
-      "source_file": null,
-      "source_date": null,
-      "result": {
-        "state": "restricted_or_unavailable",
-        "stage": "media playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
-      },
-      "quarantined": false,
-      "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.664355+00:00"
+      "checked_at": "2026-11-16T02:16:56.292704+00:00"
     },
     {
       "name": "365 дней ТВ",
       "url": "https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8",
-      "source": "iptv-org",
+      "source": "previous",
       "repository": "iptv-org/iptv",
       "source_file": null,
       "source_date": null,
@@ -282,7 +248,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.689724+00:00"
+      "checked_at": "2026-11-16T02:16:56.308255+00:00"
     },
     {
       "name": "English Club TV",
@@ -299,7 +265,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.715417+00:00"
+      "checked_at": "2026-11-16T02:16:56.323883+00:00"
     },
     {
       "name": "Discovery Channel",
@@ -326,7 +292,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.818473+00:00"
+      "checked_at": "2026-11-16T02:16:56.387705+00:00"
     },
     {
       "name": "National Geographic",
@@ -353,7 +319,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.839563+00:00"
+      "checked_at": "2026-11-16T02:16:56.399778+00:00"
     },
     {
       "name": "Animal Planet",
@@ -380,7 +346,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.878773+00:00"
+      "checked_at": "2026-11-16T02:16:56.423876+00:00"
     },
     {
       "name": "viju History",
@@ -397,7 +363,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.899300+00:00"
+      "checked_at": "2026-11-16T02:16:56.435985+00:00"
     },
     {
       "name": "Investigation Discovery",
@@ -414,7 +380,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.919072+00:00"
+      "checked_at": "2026-11-16T02:16:56.448171+00:00"
     },
     {
       "name": "Наука",
@@ -431,7 +397,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.938443+00:00"
+      "checked_at": "2026-11-16T02:16:56.460221+00:00"
     },
     {
       "name": "Моя Планета",
@@ -458,7 +424,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.959798+00:00"
+      "checked_at": "2026-11-16T02:16:56.472322+00:00"
     },
     {
       "name": "История",
@@ -485,7 +451,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:01.982238+00:00"
+      "checked_at": "2026-11-16T02:16:56.484385+00:00"
     },
     {
       "name": "Живая природа HD",
@@ -495,31 +461,14 @@
       "source_file": null,
       "source_date": null,
       "result": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "response is not an HLS playlist",
-        "http_status": 200
+        "state": "accessible",
+        "stage": "complete",
+        "http_status": 200,
+        "reason": "HLS playlist, 2 segment(s)"
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.004019+00:00"
-    },
-    {
-      "name": "Живая природа HD",
-      "url": "http://s1.merlive.am/Jivaiapriroda/index.m3u8",
-      "source": "iptv-org",
-      "repository": "iptv-org/iptv",
-      "source_file": null,
-      "source_date": null,
-      "result": {
-        "state": "restricted_or_unavailable",
-        "stage": "playlist",
-        "reason": "Not Found",
-        "http_status": 404
-      },
-      "quarantined": false,
-      "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.004038+00:00"
+      "checked_at": "2026-11-16T02:16:56.496463+00:00"
     },
     {
       "name": "В мире животных",
@@ -546,7 +495,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.024165+00:00"
+      "checked_at": "2026-11-16T02:16:56.508463+00:00"
     },
     {
       "name": "viju Nature",
@@ -563,7 +512,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.043763+00:00"
+      "checked_at": "2026-11-16T02:16:56.520527+00:00"
     },
     {
       "name": "viju Explore",
@@ -580,12 +529,12 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.064641+00:00"
+      "checked_at": "2026-11-16T02:16:56.532596+00:00"
     },
     {
       "name": "365 дней TV",
       "url": "https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8",
-      "source": "iptv-org",
+      "source": "previous",
       "repository": "iptv-org/iptv",
       "source_file": null,
       "source_date": null,
@@ -607,7 +556,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.084937+00:00"
+      "checked_at": "2026-11-16T02:16:56.544669+00:00"
     },
     {
       "name": "RTG TV HD",
@@ -624,7 +573,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.104485+00:00"
+      "checked_at": "2026-11-16T02:16:56.556711+00:00"
     },
     {
       "name": "Travel+Adventure",
@@ -640,7 +589,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.124559+00:00"
+      "checked_at": "2026-11-16T02:16:56.568730+00:00"
     },
     {
       "name": "Travel+Adventure",
@@ -656,7 +605,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.124573+00:00"
+      "checked_at": "2026-11-16T02:16:56.568741+00:00"
     },
     {
       "name": "Просвещение",
@@ -673,7 +622,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.167372+00:00"
+      "checked_at": "2026-11-16T02:16:56.592795+00:00"
     },
     {
       "name": "Большая Азия",
@@ -690,7 +639,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.187249+00:00"
+      "checked_at": "2026-11-16T02:16:56.604843+00:00"
     },
     {
       "name": "Зоопарк",
@@ -717,7 +666,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.206801+00:00"
+      "checked_at": "2026-11-16T02:16:56.616897+00:00"
     },
     {
       "name": "BBC News",
@@ -734,7 +683,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.227054+00:00"
+      "checked_at": "2026-11-16T02:16:56.628919+00:00"
     },
     {
       "name": "CNN International",
@@ -751,7 +700,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.265371+00:00"
+      "checked_at": "2026-11-16T02:16:56.653370+00:00"
     },
     {
       "name": "Al Jazeera English",
@@ -768,7 +717,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.287654+00:00"
+      "checked_at": "2026-11-16T02:16:56.665426+00:00"
     },
     {
       "name": "France 24 English",
@@ -785,7 +734,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.308984+00:00"
+      "checked_at": "2026-11-16T02:16:56.677492+00:00"
     },
     {
       "name": "DW English",
@@ -802,7 +751,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.330552+00:00"
+      "checked_at": "2026-11-16T02:16:56.689552+00:00"
     },
     {
       "name": "Euronews English",
@@ -819,7 +768,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.350958+00:00"
+      "checked_at": "2026-11-16T02:16:56.701563+00:00"
     },
     {
       "name": "Bloomberg TV",
@@ -836,7 +785,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.370861+00:00"
+      "checked_at": "2026-11-16T02:16:56.713596+00:00"
     },
     {
       "name": "CBS News 24/7",
@@ -853,7 +802,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.390681+00:00"
+      "checked_at": "2026-11-16T02:16:56.725646+00:00"
     },
     {
       "name": "NBC News NOW",
@@ -870,7 +819,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.411118+00:00"
+      "checked_at": "2026-11-16T02:16:56.737721+00:00"
     },
     {
       "name": "ABC News Australia",
@@ -887,7 +836,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.430472+00:00"
+      "checked_at": "2026-11-16T02:16:56.749764+00:00"
     },
     {
       "name": "CGTN",
@@ -904,7 +853,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.448968+00:00"
+      "checked_at": "2026-11-16T02:16:56.761821+00:00"
     },
     {
       "name": "NHK World-Japan",
@@ -921,7 +870,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.467677+00:00"
+      "checked_at": "2026-11-16T02:16:56.773967+00:00"
     },
     {
       "name": "О!",
@@ -938,7 +887,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.488664+00:00"
+      "checked_at": "2026-11-16T02:16:56.786167+00:00"
     },
     {
       "name": "Мульт",
@@ -965,7 +914,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.509081+00:00"
+      "checked_at": "2026-11-16T02:16:56.798380+00:00"
     },
     {
       "name": "TiJi",
@@ -992,7 +941,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.528174+00:00"
+      "checked_at": "2026-11-16T02:16:56.810420+00:00"
     },
     {
       "name": "Nick Jr.",
@@ -1019,7 +968,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.546684+00:00"
+      "checked_at": "2026-11-16T02:16:56.822495+00:00"
     },
     {
       "name": "Карусель",
@@ -1036,7 +985,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.566326+00:00"
+      "checked_at": "2026-11-16T02:16:56.834747+00:00"
     },
     {
       "name": "PBS Kids",
@@ -1053,7 +1002,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.585485+00:00"
+      "checked_at": "2026-11-16T02:16:56.846815+00:00"
     },
     {
       "name": "CBeebies",
@@ -1070,7 +1019,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.603858+00:00"
+      "checked_at": "2026-11-16T02:16:56.859049+00:00"
     },
     {
       "name": "CBeebies",
@@ -1086,7 +1035,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.603878+00:00"
+      "checked_at": "2026-11-16T02:16:56.859061+00:00"
     },
     {
       "name": "CBeebies",
@@ -1103,7 +1052,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.603891+00:00"
+      "checked_at": "2026-11-16T02:16:56.859072+00:00"
     },
     {
       "name": "ABC Kids",
@@ -1120,7 +1069,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.622706+00:00"
+      "checked_at": "2026-11-16T02:16:56.871183+00:00"
     },
     {
       "name": "TVOKids",
@@ -1137,7 +1086,7 @@
       },
       "quarantined": false,
       "quarantine_reason": null,
-      "checked_at": "2026-11-15T21:56:02.642401+00:00"
+      "checked_at": "2026-11-16T02:16:56.883289+00:00"
     }
   ]
 }
