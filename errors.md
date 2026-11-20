@@ -180,3 +180,7 @@
 
 - **Живая Природа** (`Zhivayapriroda.ru@HD`) — этап `candidate matching`: no exact eligible candidate.
 - **Живая природа HD** (`Zhivayapriroda.ru@HD`) — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-20T03:44:34.422095+00:00 — GitHub Actions runner
+
+- **Просвещение** (`Prosveshchenie.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
