@@ -188,3 +188,9 @@
 ## Новые отказы 2026-11-23T14:58:08.559445+00:00 — GitHub Actions runner
 
 - **Мульт** (`Mult.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-24T23:07:06.341458+00:00 — GitHub Actions runner
+
+- **В мире животных HD** (`Vmirezhivotnykh.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **В мире животных** (`Vmirezhivotnykh.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
