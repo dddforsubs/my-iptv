@@ -194,3 +194,11 @@
 - **В мире животных HD** (`Vmirezhivotnykh.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
 - **Моя Планета** (`MoyaPlaneta.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
 - **В мире животных** (`Vmirezhivotnykh.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+
+## Новые отказы 2026-11-26T01:51:31.611247+00:00 — GitHub Actions runner
+
+- **viju History HD** (`vijuHistory.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **viju Explore** (`vijuExplore.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **viju History** (`vijuHistory.ru@SD`) — этап `candidate matching`: no exact eligible candidate.
+- **RTG TV HD** (`RTGTV.ru@HD`) — этап `candidate matching`: no exact eligible candidate.
+- **О!** (`O.ru@SD`) — этап `candidate matching`: no exact eligible candidate.

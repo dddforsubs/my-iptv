@@ -7,12 +7,8 @@ https://stream8.cinerama.uz/1041/index.m3u8
 https://stream8.cinerama.uz/1042/index.m3u8
 #EXTINF:-1 tvg-id="Vmirezhivotnykh.ru@SD" group-title="Избранное",В мире животных HD
 https://stream8.cinerama.uz/1404/index.m3u8
-#EXTINF:-1 tvg-id="vijuHistory.ru@SD" group-title="Избранное",viju History HD
-http://46.53.200.153:7777/play/a01j/index.m3u8
 #EXTINF:-1 tvg-id="vijuNature.ru@SD" group-title="Избранное",viju Nature HD
 https://stream8.cinerama.uz/1228/tracks-v1a1/mono.m3u8
-#EXTINF:-1 tvg-id="vijuExplore.ru@SD" group-title="Избранное",viju Explore
-http://46.53.200.153:7777/play/a01i/index.m3u8
 #EXTINF:-1 tvg-id="365daysTV.ru@SD" group-title="Избранное",365 дней ТВ
 https://stream8.cinerama.uz/1242/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="EnglishClubTV.uk@SD" group-title="Избранное",English Club TV
@@ -25,10 +21,6 @@ https://stream8.cinerama.uz/1248/index.m3u8
 https://stream8.cinerama.uz/1247/index.m3u8
 #EXTINF:-1 tvg-id="Istoriya.ru@SD" group-title="Познавательные RU",История
 https://stream8.cinerama.uz/1266/index.m3u8
-#EXTINF:-1 tvg-id="vijuNature.ru@SD" group-title="Познавательные RU",viju Nature
-http://46.53.200.153:7777/play/a01k/index.m3u8
-#EXTINF:-1 tvg-id="RTGTV.ru@HD" group-title="Познавательные RU",RTG TV HD
-http://46.53.200.153:7777/play/a00u/index.m3u8
 #EXTINF:-1 tvg-id="Prosveshchenie.ru@SD" group-title="Познавательные RU",Просвещение
 http://cdn-01.bonus-tv.ru/prosveschenie_edge/index.m3u8
 #EXTINF:-1 tvg-id="BigAsia.ru@SD" group-title="Познавательные RU",Большая Азия
@@ -59,8 +51,6 @@ https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a44
 https://amg00405-rakutentv-cgtn-rakuten-i9tar.amagi.tv/master.m3u8
 #EXTINF:-1 tvg-id="NHKWorldJapan.jp@SD" group-title="World News EN",NHK World-Japan
 https://cdn.pishow.tv/ott/live/455/master.m3u8
-#EXTINF:-1 tvg-id="O.ru@International" group-title="Детские RU",О!
-http://88.212.15.50/live/test_telekanal_o/playlist.m3u8
 #EXTINF:-1 tvg-id="Mult.ru@SD" group-title="Детские RU",Мульт
 https://stream8.cinerama.uz/1246/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="TiJi.ru@SD" group-title="Детские RU",TiJi
